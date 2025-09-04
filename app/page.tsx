@@ -294,7 +294,7 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-bold text-[#28104E] mb-2">Dr. Sunil</h3>
+              <h3 className="text-3xl font-bold text-[#28104E] mb-2">Dr. Oceyas</h3>
               <p className="text-xl text-[#6237A0] mb-6">Orthopaedic and Sports Physiotherapy</p>
 
               <p className="text-gray-600 mb-8 leading-relaxed">

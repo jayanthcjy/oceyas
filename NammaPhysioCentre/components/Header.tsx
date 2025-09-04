@@ -31,7 +31,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div>
-              <h1 className="text-xl md:text-2xl font-bold">Namma Physio Centre</h1>
+              <h1 className="text-xl md:text-2xl font-bold">Oceyas</h1>
               <p className="text-xs text-[#DEACF5] hidden md:block">Physiotherapy & Rehab</p>
             </div>
           </Link>

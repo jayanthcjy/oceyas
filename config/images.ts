@@ -113,7 +113,7 @@ export const IMAGES = {
 // WhatsApp Configuration
 export const WHATSAPP_CONFIG = {
   number: "919916453616",
-  message: "Hi! I would like to book a physiotherapy session at Namma Physio Centre.",
+  message: "Hi! I would like to book a physiotherapy session at Oceyas Physio & Rehab.",
   getWhatsAppUrl: () => `https://wa.me/${WHATSAPP_CONFIG.number}?text=${encodeURIComponent(WHATSAPP_CONFIG.message)}`,
 }
 

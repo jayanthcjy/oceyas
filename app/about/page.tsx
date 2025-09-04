@@ -23,7 +23,7 @@ export default function AboutPage() {
       <section className="py-16 px-4 bg-gradient-to-br from-[#DEACF5] to-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#28104E] mb-6">About Namma Physio Centre</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#28104E] mb-6">About Oceyas Physio & Rehab</h1>
             <p className="text-xl text-[#6237A0] max-w-3xl mx-auto leading-relaxed">
               Dedicated to providing exceptional physiotherapy and rehabilitation services with personalized care and
               proven results.
@@ -34,7 +34,7 @@ export default function AboutPage() {
             <div>
               <Image
                 src={IMAGES.about.clinicInterior || "/placeholder.svg"}
-                alt="Namma Physio Centre Interior"
+                alt="Oceyas Physio & Rehab Interior"
                 width={600}
                 height={400}
                 className="rounded-2xl shadow-xl object-cover w-full"
@@ -43,7 +43,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold text-[#28104E] mb-6">Our Story</h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Namma Physio Centre was founded with a simple yet powerful vision: to provide world-class physiotherapy
+                Oceyas Physio & Rehab was founded with a simple yet powerful vision: to provide world-class physiotherapy
                 and rehabilitation services that truly make a difference in people's lives. Under the expert guidance of
                 Dr. Sunil, we have been serving the community for over 12 years.
               </p>

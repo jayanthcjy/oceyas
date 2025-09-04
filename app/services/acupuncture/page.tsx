@@ -66,7 +66,7 @@ export default function AcupuncturePage() {
             <div className="relative">
               <Image
                 src={IMAGES.serviceDetails.acupunctureDetail || "/placeholder.svg"}
-                alt="Acupuncture Treatment at Namma Physio Centre"
+                alt="Acupuncture Treatment at Oceyas Physio & Rehab"
                 width={600}
                 height={400}
                 className="rounded-2xl shadow-xl object-cover w-full"

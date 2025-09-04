@@ -109,7 +109,7 @@ export default function HomePage() {
     },
     {
       name: "Meera Patel",
-      review: "Online sessions were so convenient and effective. Highly recommend Namma Physio Centre!",
+      review: "Online sessions were so convenient and effective. Highly recommend Oceyas Physio & Rehab!",
       rating: 5,
       condition: "Online Therapy",
     },
@@ -541,7 +541,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-[#28104E]">Address</h4>
-                    <p className="text-[#6237A0]">Namma Physio Centre, Bangalore</p>
+                    <p className="text-[#6237A0]">Oceyas Physio & Rehab, Bangalore</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -618,7 +618,7 @@ export default function HomePage() {
               </div>
               <h3 className="font-semibold text-[#28104E] mb-2">Visit Us</h3>
               <p className="text-[#6237A0] text-center">
-                Namma Physio Centre
+                Oceyas Physio & Rehab
                 <br />
                 Physiotherapy & Rehab Center
               </p>
@@ -650,7 +650,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">Namma Physio Centre</h3>
+              <h3 className="text-2xl font-bold mb-4">Oceyas Physio & Rehab</h3>
               <p className="text-[#DEACF5] mb-4">
                 Your trusted partner in physiotherapy and rehabilitation. Expert care for lasting recovery and optimal
                 health with Dr. Sunil's 12+ years of experience.
@@ -697,7 +697,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin size={18} className="text-[#9754CB]" />
-                  <span>Namma Physio Centre, Bangalore</span>
+                  <span>Oceyas Physio & Rehab, Bangalore</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock size={18} className="text-[#9754CB]" />
@@ -708,7 +708,7 @@ export default function HomePage() {
           </div>
           <div className="border-t border-[#6237A0] pt-8 text-center">
             <p className="text-[#DEACF5]">
-              © 2024 Namma Physio Centre. All rights reserved. | Physiotherapy & Rehabilitation Center
+              © 2024 Oceyas Physio & Rehab. All rights reserved. | Physiotherapy & Rehabilitation Center
             </p>
           </div>
         </div>

@@ -6,7 +6,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Namma Physio Centre - Expert Physiotherapy & Rehabilitation",
+  title: "Oceyas Physio & Rehab - Expert Physiotherapy & Rehabilitation",
   description:
     "Professional physiotherapy and rehabilitation services with Dr. Sunil. Specializing in spine care, sports injury, posture correction, and more. 12+ years experience, 5K+ happy customers.",
   keywords:

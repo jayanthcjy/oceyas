@@ -71,7 +71,7 @@ export default function SpineCarePage() {
             <div className="relative">
               <Image
                 src={IMAGES.serviceDetails.spinecareDetail || "/placeholder.svg"}
-                alt="Spine Care Treatment at Namma Physio Centre"
+                alt="Spine Care Treatment at Oceyas Physio & Rehab"
                 width={600}
                 height={400}
                 className="rounded-2xl shadow-xl object-cover w-full"

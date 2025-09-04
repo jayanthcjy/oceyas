@@ -27,7 +27,7 @@ export default function ContactPage() {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-[#28104E] mb-6">Contact Us</h1>
             <p className="text-xl text-[#6237A0] max-w-3xl mx-auto leading-relaxed">
-              Get in touch with Namma Physio Centre. We're here to help you start your journey to better health.
+              Get in touch with Oceyas Physio & Rehab. We're here to help you start your journey to better health.
             </p>
           </div>
 
@@ -35,7 +35,7 @@ export default function ContactPage() {
             <div>
               <Image
                 src={IMAGES.contact.clinicExterior || "/placeholder.svg"}
-                alt="Namma Physio Centre Exterior"
+                alt="Oceyas Physio & Rehab Exterior"
                 width={600}
                 height={400}
                 className="rounded-2xl shadow-xl object-cover w-full"
@@ -92,7 +92,7 @@ export default function ContactPage() {
               </div>
               <h3 className="font-semibold text-[#28104E] mb-2">Location</h3>
               <p className="text-[#6237A0] text-center">
-                Namma Physio Centre
+                Oceyas Physio & Rehab
                 <br />
                 Bangalore
               </p>
@@ -240,7 +240,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[#28104E] mb-6">Ready to Get Started?</h2>
           <p className="text-[#6237A0] text-lg mb-8 max-w-2xl mx-auto">
-            Don't let pain hold you back. Contact Namma Physio Centre today and take the first step towards a healthier,
+            Don't let pain hold you back. Contact Oceyas Physio & Rehab today and take the first step towards a healthier,
             pain-free life with Dr. Sunil's expert care.
           </p>
           <button

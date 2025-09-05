@@ -13,6 +13,13 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
+            oceyas: {
+              deepBlue: '#2B4470',
+              skyBlue: '#C7DDEB',
+              brightBlue: '#348AC7',
+              pastelYellow: '#F4E883',
+              mutedPink: '#D04A6B',
+            },
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

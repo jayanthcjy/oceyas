@@ -45,7 +45,7 @@ export default function AboutPage() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Oceyas Physio & Rehab was founded with a simple yet powerful vision: to provide world-class physiotherapy
                 and rehabilitation services that truly make a difference in people's lives. Under the expert guidance of
-                Dr. Sunil, we have been serving the community for over 12 years.
+                Dr. Ram Kumar, we have been serving the community for over 12 years.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
                 Our approach combines traditional physiotherapy techniques with modern treatment methods, ensuring that
@@ -142,7 +142,7 @@ export default function AboutPage() {
                 />
               </div>
               <div>
-                <h3 className="text-3xl font-bold text-[#28104E] mb-2">Dr. Sunil</h3>
+                <h3 className="text-3xl font-bold text-[#28104E] mb-2">Dr. Ram Kumar</h3>
                 <p className="text-xl text-[#6237A0] mb-6">Orthopaedic and Sports Physiotherapy</p>
 
                 <div className="grid grid-cols-2 gap-4 mb-6">
@@ -159,7 +159,7 @@ export default function AboutPage() {
                 </div>
 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Dr. Sunil brings over 12 years of specialized experience in orthopaedic and sports physiotherapy. He
+                  Dr. Ram Kumar brings over 12 years of specialized experience in orthopaedic and sports physiotherapy. He
                   has successfully treated thousands of patients, helping them recover from various conditions and
                   achieve their optimal physical health goals.
                 </p>
@@ -176,7 +176,7 @@ export default function AboutPage() {
                   className="bg-[#9754CB] hover:bg-[#6237A0] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center gap-3"
                 >
                   <MessageCircle size={20} />
-                  Consult Dr. Sunil
+                  Consult Dr. Ram Kumar
                 </button>
               </div>
             </div>

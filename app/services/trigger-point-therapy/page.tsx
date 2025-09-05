@@ -38,11 +38,11 @@ export default function TriggerPointTherapyPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-16 px-4 bg-gradient-to-br from-[#DEACF5] to-white">
+      <section className="relative py-16 px-4 bg-gradient-oceyas">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-[#28104E] mb-6">Trigger Point Therapy</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-oceyas-deepBlue mb-6">Trigger Point Therapy</h1>
               <p className="text-xl text-[#6237A0] mb-8 leading-relaxed">
                 Deep tissue work to release muscle knots and restore mobility through targeted pressure point techniques
                 and myofascial release.

@@ -4,6 +4,8 @@
 export const IMAGES = {
   // Hero Section Images
   hero: {
+    homecare:
+      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/home_care_sndqqm.jpg?height=300&width=400",
     spinecare:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753366511/SpineCare2_aawznj.png?height=300&width=400",
     postureCorrection:
@@ -35,8 +37,8 @@ export const IMAGES = {
 
   // Doctor Section
   doctor: {
-    drSunil: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753427389/Doc_etr95n.png?height=400&width=300",
-    genericDoctor: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753437670/solution_wbsx7n.jpg?height=400&width=500", // New image for service pages
+    drSunil: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037425/DrRam_vzq6gm.jpg?height=400&width=300",
+    genericDoctor: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037425/DrRam_vzq6gm.jpg?height=400&width=500", // New image for service pages
   },
 
   // Testimonials
@@ -55,14 +57,14 @@ export const IMAGES = {
     spinecareDetail:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753366513/spineCare_yl95p1.png?height=400&width=600",
     postureCorrectionDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753436270/BEFOREAFTER_aodv4r.png?height=400&width=600",
+      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/home_care_sndqqm.jpg?height=400&width=600",
     myofascialDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753411214/TriggerPont2_hc9v6l.png?height=400&width=600",
+      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/Home_Nurse_kfxxc8.jpg?height=400&width=600",
     sportsInjuryDetail:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753410205/sportsInjury_ducujw.png?height=400&width=600",
     acupunctureDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753435964/ACC_yyvqsm.jpg?height=400&width=600",
-    rehabDetail: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753435965/rehab_dwzrch.png?height=400&width=600",
+      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/Care_Taker_klnmgz.jpg?height=400&width=600",
+    rehabDetail: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/physio_jmitdr.jpg?height=400&width=600",
     onlineSessionsDetail:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753366505/OnlineSessions_pr1o05.png?height=400&width=600",
     preventiveDetail:
@@ -112,14 +114,13 @@ export const IMAGES = {
 
 // WhatsApp Configuration
 export const WHATSAPP_CONFIG = {
-  number: "919916453616",
+  number: "918075554529",
   message: "Hi! I would like to book a physiotherapy session at Oceyas Physio & Rehab.",
   getWhatsAppUrl: () => `https://wa.me/${WHATSAPP_CONFIG.number}?text=${encodeURIComponent(WHATSAPP_CONFIG.message)}`,
 }
 
 // Google Maps Configuration
 export const MAPS_CONFIG = {
-  embedUrl: "https://maps.app.goo.gl/Qb1ZKa3jig5CzGZv8",
-  iframeUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0!2d77.5946!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU4JzE3LjgiTiA3N8KwMzUnNDAuNiJF!5e0!3m2!1sen!2sin!4v1234567890",
+  embedUrl: "https://goo.gl/maps/QX9Z9Z9Z9Z9Z9Z9Z9",
+  iframeUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939601.6441459893!2d77.83495749256022!3d15.362007070487993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1118a13a0831%3A0xac912a9695733139!2sOCEYAS%20PHYSIOTHERAPY%20%26%20REHAB%20CLINIC!5e0!3m2!1sen!2sin!4v1756984728381!5m2!1sen!2sin",
 }

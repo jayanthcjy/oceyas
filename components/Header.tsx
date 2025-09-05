@@ -25,36 +25,36 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-[#28104E] text-white sticky top-0 z-50 shadow-lg">
+    <header className="bg-oceyas-deepBlue text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div>
               <h1 className="text-xl md:text-2xl font-bold">Oceyas</h1>
-              <p className="text-xs text-[#DEACF5] hidden md:block">Physiotherapy & Rehab</p>
+              <p className="text-xs text-oceyas-skyBlue hidden md:block">Physiotherapy & Rehab</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="hover:text-[#9754CB] transition-colors duration-300">
+            <Link href="/" className="hover:text-oceyas-brightBlue transition-colors duration-300">
               Home
             </Link>
 
             {/* Services Dropdown */}
             <div className="relative group">
-              <button className="flex items-center gap-1 hover:text-[#9754CB] transition-colors duration-300">
+              <button className="flex items-center gap-1 hover:text-oceyas-brightBlue transition-colors duration-300">
                 Services
                 <ChevronDown size={16} />
               </button>
 
-              <div className="absolute top-full left-0 w-64 bg-white text-[#28104E] rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div className="absolute top-full left-0 w-64 bg-white text-oceyas-deepBlue rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 {services.map((service) => (
                   <Link
                     key={service.href}
                     href={service.href}
-                    className="block px-4 py-2 hover:bg-[#DEACF5] transition-colors duration-300"
+                    className="block px-4 py-2 hover:bg-oceyas-skyBlue transition-colors duration-300"
                   >
                     {service.name}
                   </Link>
@@ -62,16 +62,16 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/about" className="hover:text-[#9754CB] transition-colors duration-300">
+            <Link href="/about" className="hover:text-oceyas-brightBlue transition-colors duration-300">
               About Us
             </Link>
-            <Link href="/contact" className="hover:text-[#9754CB] transition-colors duration-300">
+            <Link href="/contact" className="hover:text-oceyas-brightBlue transition-colors duration-300">
               Contact Us
             </Link>
 
             <button
               onClick={handleWhatsApp}
-              className="bg-[#9754CB] hover:bg-[#6237A0] px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2"
+              className="bg-oceyas-brightBlue hover:bg-oceyas-deepBlue px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2"
             >
               <MessageCircle size={16} />
               Book Now
@@ -86,11 +86,11 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-[#6237A0]">
+          <div className="md:hidden py-4 border-t border-oceyas-brightBlue">
             <div className="flex flex-col space-y-4">
               <Link
                 href="/"
-                className="hover:text-[#9754CB] transition-colors duration-300"
+                className="hover:text-oceyas-brightBlue transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
@@ -100,7 +100,7 @@ export default function Header() {
               <div>
                 <button
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className="flex items-center gap-1 hover:text-[#9754CB] transition-colors duration-300 w-full text-left"
+                  className="flex items-center gap-1 hover:text-oceyas-brightBlue transition-colors duration-300 w-full text-left"
                 >
                   Services
                   <ChevronDown
@@ -115,7 +115,7 @@ export default function Header() {
                       <Link
                         key={service.href}
                         href={service.href}
-                        className="block text-[#DEACF5] hover:text-[#9754CB] transition-colors duration-300"
+                        className="block text-oceyas-skyBlue hover:text-oceyas-brightBlue transition-colors duration-300"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {service.name}
@@ -127,14 +127,14 @@ export default function Header() {
 
               <Link
                 href="/about"
-                className="hover:text-[#9754CB] transition-colors duration-300"
+                className="hover:text-oceyas-brightBlue transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
               </Link>
               <Link
                 href="/contact"
-                className="hover:text-[#9754CB] transition-colors duration-300"
+                className="hover:text-oceyas-brightBlue transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact Us
@@ -145,7 +145,7 @@ export default function Header() {
                   handleWhatsApp()
                   setIsMenuOpen(false)
                 }}
-                className="bg-[#9754CB] hover:bg-[#6237A0] px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 w-fit"
+                className="bg-oceyas-brightBlue hover:bg-oceyas-deepBlue px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 w-fit"
               >
                 <MessageCircle size={16} />
                 Book Now

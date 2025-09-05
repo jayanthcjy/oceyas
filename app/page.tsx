@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Phone, MapPin, Clock, MessageCircle, ChevronRight, Star, Users, Award, Calendar } from "lucide-react"
+import { Phone, MapPin, Clock, MessageCircle, Star, Users, Award, Calendar } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Header from "@/components/Header"
@@ -10,81 +10,36 @@ import { IMAGES, WHATSAPP_CONFIG, MAPS_CONFIG } from "@/config/images"
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [userName, setUserName] = useState("")
+  const [userProblem, setUserProblem] = useState("")
+  const [nameError, setNameError] = useState("")
+  const [problemError, setProblemError] = useState("")
   const sliderRef = useRef<HTMLDivElement>(null)
   const testimonialRef = useRef<HTMLDivElement>(null)
 
   const heroSlides = [
+    {
+      title: "HomeCare Physio",
+      image: IMAGES.hero.homecare,
+      description: "Physiotherapy care at your home",
+    },
     {
       title: "Spine Care",
       image: IMAGES.hero.spinecare,
       description: "Expert spinal alignment and back pain relief",
     },
     {
-      title: "Posture Correction",
-      image: IMAGES.hero.postureCorrection,
-      description: "Perfect posture for IT professionals",
-    },
-    {
-      title: "Trigger Point Therapy",
-      image: IMAGES.hero.triggerPoint,
-      description: "Targeted muscle tension relief",
-    },
-    {
       title: "Sports Injury",
       image: IMAGES.hero.sportsInjury,
       description: "Athletic recovery and performance",
     },
-  ]
-
-  const services = [
     {
-      title: "Spine Care",
-      image: IMAGES.services.spinecare,
-      description: "Comprehensive spinal health and alignment therapy for lasting relief.",
-      href: "/services/spine-care",
+      title: "Posture Correction",
+      image: IMAGES.hero.postureCorrection,
+      description: "Perfect posture for IT professionals",
     },
-    {
-      title: "Posture Correction for IT Employees",
-      image: IMAGES.services.postureCorrection,
-      description: "Specialized programs for desk workers to prevent and correct postural issues.",
-      href: "/services/posture-correction",
-    },
-    {
-      title: "Myofascial and Trigger Point Therapy",
-      image: IMAGES.services.myofascial,
-      description: "Deep tissue work to release muscle knots and restore mobility.",
-      href: "/services/trigger-point-therapy",
-    },
-    {
-      title: "Sports Injury",
-      image: IMAGES.services.sportsInjury,
-      description: "Expert care for athletic injuries and performance optimization.",
-      href: "/services/sports-injury",
-    },
-    {
-      title: "Acupuncture",
-      image: IMAGES.services.acupuncture,
-      description: "Traditional acupuncture for pain relief and holistic healing.",
-      href: "/services/acupuncture",
-    },
-    {
-      title: "Rehab",
-      image: IMAGES.services.rehab,
-      description: "Comprehensive rehabilitation programs for complete recovery.",
-      href: "/services/rehabilitation",
-    },
-    {
-      title: "Online Sessions",
-      image: IMAGES.services.onlineSessions,
-      description: "Convenient virtual consultations and guided therapy sessions.",
-      href: "/services/online-sessions",
-    },
-    {
-      title: "Preventive Therapy",
-      image: IMAGES.services.preventive,
-      description: "Proactive care to prevent injuries and maintain optimal health.",
-      href: "/services/preventive-therapy",
-    },
+    
+    
   ]
 
   const testimonials = [
@@ -115,56 +70,61 @@ export default function HomePage() {
     },
   ]
 
-  const blogs = [
-    {
-      title: "5 Essential Exercises for Back Pain Relief",
-      image: IMAGES.blog.blog1,
-      excerpt:
-        "Discover simple yet effective exercises that can help alleviate chronic back pain and improve your quality of life.",
-      slug: "back-pain-relief-exercises",
-    },
-    {
-      title: "Ergonomic Workspace Setup for IT Professionals",
-      image: IMAGES.blog.blog2,
-      excerpt:
-        "Learn how to set up your workspace to prevent posture-related issues and maintain optimal spinal health.",
-      slug: "ergonomic-workspace-setup",
-    },
-    {
-      title: "Sports Injury Prevention: A Complete Guide",
-      image: IMAGES.blog.blog3,
-      excerpt:
-        "Essential tips and techniques to prevent common sports injuries and maintain peak athletic performance.",
-      slug: "sports-injury-prevention-guide",
-    },
-    {
-      title: "Understanding Trigger Point Therapy",
-      image: IMAGES.blog.blog4,
-      excerpt:
-        "Everything you need to know about trigger point therapy and how it can help with muscle pain and tension.",
-      slug: "understanding-trigger-point-therapy",
-    },
-  ]
-
   const whyUsFeatures = [
     {
-      icon: IMAGES.whyUs.diagnosis,
       title: "Root Cause Identification",
       description: "We don't just treat pain, we find what's causing it.",
       number: "1",
     },
     {
-      icon: IMAGES.whyUs.treatment,
       title: "Precision Treatment",
       description: "Personalized therapy plans tailored to your body and goals.",
       number: "2",
     },
     {
-      icon: IMAGES.whyUs.monitoring,
       title: "Progress Monitoring",
       description: "We track your recovery and adjust in real-time for results.",
       number: "3",
     },
+  ]
+
+  const services = [
+    {
+      title: "Physio and Rehab",
+      description: "Comprehensive rehabilitation programs for complete recovery.",
+      href: "/services/rehabilitation",
+      image: IMAGES.serviceDetails.rehabDetail,
+    },
+    {
+      title: "Home Care Physio",
+      description: "Specialized programs for home care physiotherapy and improvement.",
+      href: "/services/posture-correction",
+      image: IMAGES.serviceDetails.postureCorrectionDetail,
+    },
+    {
+      title: "Home Nurse",
+      description: "Professional trigger point therapy for pain relief.",
+      href: "/services/trigger-point-therapy",
+      image: IMAGES.serviceDetails.myofascialDetail,
+    },
+    {
+      title: "Care Taker",
+      description: "Traditional care taker services for pain management and healing.",
+      href: "/services/acupuncture",
+      image: IMAGES.serviceDetails.acupunctureDetail,
+    },
+    {
+      title: "Sports Injury",
+      description: "Expert treatment for sports-related injuries and rehabilitation.",
+      href: "/services/sports-injury",
+      image: IMAGES.serviceDetails.sportsInjuryDetail,
+    },
+    {
+      title: "Spine Care",
+      description: "Expert spinal health treatment and comprehensive back care solutions.",
+      href: "/services/spine-care",
+      image: IMAGES.serviceDetails.spinecareDetail,
+    }
   ]
 
   // Auto-scroll functionality for hero
@@ -217,8 +177,143 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       <Header />
 
+      <style jsx>{`
+        @keyframes whatsappPulse {
+          0% { background-color: #D04A6B; transform: scale(1); }
+          50% { background-color: #25D366; transform: scale(1.05); }
+          100% { background-color: #D04A6B; transform: scale(1); }
+        }
+        
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(50px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInLeft {
+          from { opacity: 0; transform: translateX(-50px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes fadeInRight {
+          from { opacity: 0; transform: translateX(50px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInDown {
+          from { opacity: 0; transform: translateY(-50px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes scaleIn {
+          from { opacity: 0; transform: scale(0.8); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes bounce {
+          0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+          40% { transform: translateY(-10px); }
+          60% { transform: translateY(-5px); }
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes glow {
+          0% { box-shadow: 0 0 20px rgba(52, 138, 199, 0.4); }
+          50% { box-shadow: 0 0 30px rgba(52, 138, 199, 0.8); }
+          100% { box-shadow: 0 0 20px rgba(52, 138, 199, 0.4); }
+        }
+        
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        
+        .whatsapp-button {
+          animation: whatsappPulse 2s infinite;
+        }
+        
+        .animate-fadeInUp {
+          animation: fadeInUp 0.8s ease-out forwards;
+          opacity: 0;
+        }
+        
+        .animate-fadeInLeft {
+          animation: fadeInLeft 0.8s ease-out forwards;
+          opacity: 0;
+        }
+        
+        .animate-fadeInRight {
+          animation: fadeInRight 0.8s ease-out forwards;
+          opacity: 0;
+        }
+        
+        .animate-slideInDown {
+          animation: slideInDown 0.8s ease-out forwards;
+          opacity: 0;
+        }
+        
+        .animate-scaleIn {
+          animation: scaleIn 0.6s ease-out forwards;
+          opacity: 0;
+        }
+        
+        .animate-bounce {
+          animation: bounce 2s infinite;
+        }
+        
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-glow {
+          animation: glow 2s ease-in-out infinite;
+        }
+        
+        .animate-gradient {
+          background: linear-gradient(-45deg, #2B4470, #348AC7, #C7DDEB, #348AC7);
+          background-size: 400% 400%;
+          animation: gradientShift 4s ease infinite;
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+        
+        .scroll-reveal {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: all 0.8s ease-out;
+        }
+        
+        .scroll-reveal.revealed {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        .hover-lift {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+          transform: translateY(-10px) scale(1.02);
+          box-shadow: 0 20px 40px rgba(43, 68, 112, 0.15);
+        }
+        
+        .parallax {
+          transform: translateZ(0);
+          will-change: transform;
+        }
+      `}</style>
+
       {/* Hero Section with Horizontal Slider */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#DEACF5] to-white">
+      <section className="relative overflow-hidden animate-gradient">
         <div
           ref={sliderRef}
           className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory"
@@ -231,13 +326,13 @@ export default function HomePage() {
                   src={slide.image || "/placeholder.svg"}
                   alt={slide.title}
                   fill
-                  className="object-cover"
+                  className="object-cover parallax transition-transform duration-700 ease-out"
                   priority={index === 0}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#28104E]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2B4470]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-4 right-4 text-white">
-                  <h2 className="text-2xl md:text-4xl font-bold mb-2">{slide.title}</h2>
-                  <p className="text-sm md:text-lg text-[#DEACF5] mb-4">{slide.description}</p>
+                  <h2 className="text-2xl md:text-4xl font-bold mb-2 animate-fadeInLeft">{slide.title}</h2>
+                  <p className="text-sm md:text-lg text-[#C7DDEB] mb-4 animate-fadeInRight stagger-2">{slide.description}</p>
                 </div>
               </div>
             </div>
@@ -250,160 +345,197 @@ export default function HomePage() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? "bg-[#9754CB]" : "bg-white/50"
+              className={`w-3 h-3 rounded-full transition-all duration-500 hover:scale-125 ${
+                index === currentSlide ? "bg-[#348AC7] animate-glow" : "bg-white/50"
               }`}
             />
           ))}
         </div>
+
+        {/* Floating elements for premium look */}
+        <div className="absolute top-20 right-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
+        <div className="absolute bottom-20 left-10 w-16 h-16 bg-white/5 rounded-full animate-float stagger-3"></div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-8 px-4 bg-gradient-to-r from-[#DEACF5] to-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <button
-            onClick={handleWhatsApp}
-            className="bg-[#9754CB] hover:bg-[#6237A0] text-white px-6 py-4 md:px-8 md:py-4 rounded-full text-base md:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 mx-auto"
-          >
-            <MessageCircle size={20} className="md:hidden" />
-            <MessageCircle size={24} className="hidden md:block" />
-            <span>Book a Session Now</span>
-            <ChevronRight size={18} className="md:hidden" />
-            <ChevronRight size={20} className="hidden md:block" />
-          </button>
+      {/* Booking Form Section - Compact and Attractive */}
+<section className="py-6 bg-gradient-to-br from-[#C7DDEB] to-white">
+  <div className="max-w-4xl mx-auto px-4">
+    <div className="bg-white/95 rounded-2xl shadow-xl border-2 border-[#348AC7]/20 p-4 md:p-6 hover-lift animate-scaleIn backdrop-blur-sm">
+      <div className="grid md:grid-cols-5 gap-4 items-end">
+        {/* Left Section - Compact */}
+        <div className="md:col-span-2 animate-fadeInLeft">
+          <h2 className="text-xl md:text-2xl font-bold text-[#2B4470] mb-1">
+            Schedule your session
+          </h2>
+          <p className="text-[#348AC7] text-sm mb-3 md:mb-0">
+            Quick booking form
+          </p>
         </div>
-      </section>
-
-      {/* Doctor Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#28104E] mb-4">Meet Our Expert</h2>
-            <p className="text-[#6237A0] text-lg">Experienced physiotherapist dedicated to your recovery</p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <Image
-                src={IMAGES.doctor.drSunil || "/placeholder.svg"}
-                alt="Dr. Sunil - Orthopaedic and Sports Physiotherapy"
-                width={400}
-                height={500}
-                className="rounded-2xl shadow-xl object-cover w-full"
-              />
-            </div>
-
+        
+        {/* Form Fields - More Compact */}
+        <div className="md:col-span-3 animate-fadeInRight stagger-2">
+          <div className="grid md:grid-cols-3 gap-3">
+            {/* Name Input */}
             <div>
-              <h3 className="text-3xl font-bold text-[#28104E] mb-2">Dr. Oceyas</h3>
-              <p className="text-xl text-[#6237A0] mb-6">Orthopaedic and Sports Physiotherapy</p>
-
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                With over 12 years of experience in physiotherapy, Dr. Sunil specializes in orthopaedic and sports
-                physiotherapy. He has helped thousands of patients recover from various conditions and achieve optimal
-                physical health through personalized treatment plans.
-              </p>
-
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="text-center p-4 bg-[#DEACF5] rounded-xl">
-                  <div className="flex items-center justify-center mb-2">
-                    <Award className="text-[#6237A0]" size={32} />
-                  </div>
-                  <h4 className="text-2xl font-bold text-[#28104E]">12+</h4>
-                  <p className="text-[#6237A0] text-sm">Years Experience</p>
-                </div>
-                <div className="text-center p-4 bg-[#DEACF5] rounded-xl">
-                  <div className="flex items-center justify-center mb-2">
-                    <Users className="text-[#6237A0]" size={32} />
-                  </div>
-                  <h4 className="text-2xl font-bold text-[#28104E]">5K+</h4>
-                  <p className="text-[#6237A0] text-sm">Happy Customers</p>
-                </div>
-              </div>
-
+              <input
+                type="text"
+                placeholder="Your Name"
+                id="userName"
+                onChange={(e) => {
+                  setUserName(e.target.value);
+                  setNameError("");
+                }}
+                value={userName}
+                className={`w-full px-3 py-2.5 text-sm rounded-2xl border ${nameError ? 'border-red-500' : 'border-[#348AC7]/40'} focus:outline-none focus:border-[#2B4470] focus:ring-2 focus:ring-[#348AC7]/20 bg-white text-[#2B4470] transition-all duration-300`}
+              />
+              {nameError && <p className="text-red-500 text-xs mt-1 animate-fadeInUp">{nameError}</p>}
+            </div>
+            
+            {/* Problem Input */}
+            <div>
+              <input
+                type="text"
+                placeholder="Brief problem description"
+                id="userProblem"
+                onChange={(e) => {
+                  setUserProblem(e.target.value);
+                  setProblemError("");
+                }}
+                value={userProblem}
+                className={`w-full px-3 py-2.5 text-sm rounded-2xl border ${problemError ? 'border-red-500' : 'border-[#348AC7]/40'} focus:outline-none focus:border-[#2B4470] focus:ring-2 focus:ring-[#348AC7]/20 bg-white text-[#2B4470] transition-all duration-300`}
+              />
+              {problemError && <p className="text-red-500 text-xs mt-1 animate-fadeInUp">{problemError}</p>}
+            </div>
+            
+            {/* Book Now Button */}
+            <div>
               <button
-                onClick={handleWhatsApp}
-                className="bg-[#9754CB] hover:bg-[#6237A0] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center gap-3"
+                onClick={() => {
+                  let isValid = true;
+                  if (!userName) {
+                    setNameError("Name required");
+                    isValid = false;
+                  }
+                  if (!userProblem) {
+                    setProblemError("Problem required");
+                    isValid = false;
+                  }
+                  if (isValid) {
+                    window.open(
+                      `https://wa.me/918075554529?text=${encodeURIComponent(
+                        `Hi, my name is ${userName} and my problem is ${userProblem}`
+                      )}`,
+                      "_blank"
+                    );
+                  }
+                }}
+                className="w-full whatsapp-button text-white px-4 py-2.5 text-sm font-semibold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
               >
-                <MessageCircle size={20} />
-                Consult Dr. Sunil
+                <MessageCircle size={16} className="animate-wiggle" />
+                BOOK NOW
               </button>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Why Us Section */}
-      <section className="py-16 px-4 bg-[#DEACF5]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#28104E] mb-4">Why Choose Us</h2>
-            <p className="text-[#6237A0] text-lg max-w-2xl mx-auto">
-              Our proven methodology ensures the best outcomes for your recovery journey
-            </p>
+      </div>
+      
+      {/* Quick Stats Row - Added for attractiveness */}
+      <div className="grid grid-cols-3 gap-4 mt-4 pt-3 border-t border-[#348AC7]/10">
+        <div className="text-center animate-scaleIn stagger-1">
+          <div className="flex items-center justify-center gap-1 text-[#348AC7] mb-1">
+            <Clock size={14} />
+            <span className="text-xs font-medium">Quick Response</span>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {whyUsFeatures.map((feature, index) => (
-              <div key={index} className="text-center">
-                <div className="relative mb-6">
-                  <div className="w-20 h-20 bg-[#6237A0] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-2xl font-bold">{feature.number}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#28104E] mb-3">{feature.title}</h3>
-                  <p className="text-[#6237A0] text-sm leading-relaxed">{feature.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-[#28104E] mb-4">Start your recovery today</h3>
-            <button
-              onClick={handleWhatsApp}
-              className="bg-[#9754CB] hover:bg-[#6237A0] text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 mx-auto"
-            >
-              <Calendar size={24} />
-              Book Your Session
-            </button>
-          </div>
+          <p className="text-xs text-gray-600">Within 30 mins</p>
         </div>
-      </section>
+        <div className="text-center animate-scaleIn stagger-2">
+          <div className="flex items-center justify-center gap-1 text-[#348AC7] mb-1">
+            <Users size={14} />
+            <span className="text-xs font-medium">5000+ Patients</span>
+          </div>
+          <p className="text-xs text-gray-600">Successfully treated</p>
+        </div>
+        <div className="text-center animate-scaleIn stagger-3">
+          <div className="flex items-center justify-center gap-1 text-[#348AC7] mb-1">
+            <Award size={14} />
+            <span className="text-xs font-medium">12+ Years</span>
+          </div>
+          <p className="text-xs text-gray-600">Experience</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-     {/* Services Section */}
-<section className="py-16 px-4 bg-white">
-  <div className="max-w-6xl mx-auto">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#28104E] mb-4">Our Services</h2>
-      <p className="text-[#6237A0] text-lg max-w-2xl mx-auto">
-        Comprehensive physiotherapy and rehabilitation services tailored to your needs
+      {/* Why Us Section - Compressed */}
+<section className="py-10 px-4 bg-[#C7DDEB] relative overflow-hidden">
+  {/* Background decorative elements */}
+  <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-[#348AC7]/20 to-transparent rounded-full animate-floatSlow"></div>
+  <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tl from-[#2B4470]/10 to-transparent rounded-full animate-floatGentle stagger-4"></div>
+  
+  <div className="max-w-5xl mx-auto relative z-10">
+    <div className="text-center mb-8 animate-slideInDown">
+      <h2 className="text-2xl md:text-3xl font-bold text-[#2B4470] mb-2">Why Choose Us</h2>
+      <p className="text-[#348AC7] text-sm max-w-xl mx-auto">
+        Our proven methodology ensures the best outcomes for your recovery journey
       </p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      {whyUsFeatures.map((feature, index) => (
+        <div key={index} className={`text-center hover-lift animate-fadeInUp stagger-${index + 1}`}>
+          <div className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="flex items-center justify-center mb-3">
+              <div className="w-12 h-12 bg-[#348AC7] rounded-full flex items-center justify-center animate-floatSlow">
+                <span className="text-white text-lg font-bold">{feature.number}</span>
+              </div>
+            </div>
+            <h3 className="text-lg font-bold text-[#2B4470] mb-2">{feature.title}</h3>
+            <p className="text-[#348AC7] text-xs leading-relaxed">{feature.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div className="text-center animate-fadeInUp stagger-4">
+      <button
+        onClick={handleWhatsApp}
+        className="bg-[#D04A6B] hover:bg-[#348AC7] text-white px-6 py-3 rounded-2xl text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-500 flex items-center gap-2 mx-auto hover:scale-110 animate-pulse"
+      >
+        <Calendar size={18} className="animate-sway" />
+        Book Your Session
+      </button>
+    </div>
+  </div>
+</section>
+
+     {/* Services Section */}
+<section className="py-12 px-4 bg-white relative">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-8 animate-slideInDown">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#2B4470]">Our Services</h2>
+    </div>
+
+    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
       {services.map((service, index) => (
         <Link key={index} href={service.href}>
-          <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:-translate-y-2 cursor-pointer">
-            <div className="relative h-48 overflow-hidden">
-              <Image
-                src={service.image || "/placeholder.svg"}
-                alt={service.title}
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#28104E]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className={`relative group h-[200px] md:h-[400px] rounded-xl overflow-hidden hover-lift animate-scaleIn stagger-${index % 3 + 1}`}>
+            <Image
+              src={service.image}
+              alt={service.title}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-125"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#2B4470]/90 via-[#2B4470]/50 to-transparent transition-all duration-500 group-hover:from-[#348AC7]/90" />
+            <div className="absolute inset-x-0 bottom-0 p-3 md:p-6 text-white transform transition-all duration-500 group-hover:translate-y-[-10px]">
+              <h3 className="text-sm md:text-2xl font-bold mb-1 md:mb-2 group-hover:text-[#C7DDEB] transition-all duration-300">
+                {service.title}
+              </h3>
+              <p className="text-xs md:text-sm text-[#C7DDEB] group-hover:text-white transition-all duration-300 line-clamp-2">
+                {service.description}
+              </p>
             </div>
-            <div className="p-6 flex flex-col h-full justify-between">
-              <div>
-                <h3 className="text-xl font-bold text-[#28104E] mb-3 group-hover:text-[#6237A0] transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-              </div>
-              <div className="mt-4 text-right">
-                <span className="text-sm text-[#6237A0] font-medium hover:underline">View More →</span>
-              </div>
-            </div>
+            <div className="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
           </div>
         </Link>
       ))}
@@ -411,155 +543,207 @@ export default function HomePage() {
   </div>
 </section>
 
-      {/* Testimonials Section */}
-      <section className="py-16 px-4 bg-[#DEACF5]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#28104E] mb-4">What Our Clients Say</h2>
-            <p className="text-[#6237A0] text-lg">Real stories from our satisfied patients</p>
-          </div>
-
-          <div className="relative">
-            <div
-              ref={testimonialRef}
-              className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory gap-6"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            >
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="min-w-[300px] md:min-w-[350px] snap-start">
-                  <div className="bg-white rounded-2xl p-6 shadow-lg h-full">
-                    <div className="flex items-center mb-4">
-                      <div className="ml-0">
-                        <h4 className="font-bold text-[#28104E]">{testimonial.name}</h4>
-                        <p className="text-[#6237A0] text-sm">{testimonial.condition}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} size={16} className="text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-
-                    <p className="text-gray-600 italic leading-relaxed">"{testimonial.review}"</p>
-                  </div>
-                </div>
+ {/* Testimonials Section - Google Reviews Style */}
+<section className="py-16 px-4 animate-gradient relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-br from-[#2B4470]/90 to-[#348AC7]/90"></div>
+  <div className="max-w-6xl mx-auto relative z-10">
+    <div className="text-center mb-12 animate-slideInDown">
+      <div className="flex items-center justify-center gap-3 mb-4">
+        {/* Google Logo */}
+        <svg width="48" height="48" viewBox="0 0 48 48" className="animate-floatGentle">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+        <div className="text-left">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Google Reviews</h2>
+          <div className="flex items-center gap-2 mt-1">
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={18} className="text-[#F4E883] fill-current" />
               ))}
             </div>
-
-            {/* Testimonial Indicators */}
-            <div className="flex justify-center mt-8 space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial ? "bg-[#9754CB]" : "bg-[#6237A0]/30"
-                  }`}
-                />
-              ))}
-            </div>
+            <span className="text-[#C7DDEB] text-sm font-medium">4.9 out of 5</span>
           </div>
         </div>
-      </section>
+      </div>
+      <p className="text-[#C7DDEB] text-lg">Real stories from our satisfied patients</p>
+    </div>
 
-      {/* Blog Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#28104E] mb-4">Health & Wellness Blog</h2>
-            <p className="text-[#6237A0] text-lg">Expert tips and insights for better health</p>
-          </div>
-
-          {/* Desktop Grid */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {blogs.map((blog, index) => (
-              <Link key={index} href={`/blog/${blog.slug}`}>
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:-translate-y-2 cursor-pointer">
-                  <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={blog.image || "/placeholder.svg"}
-                      alt={blog.title}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
+    <div className="relative">
+      <div
+        ref={testimonialRef}
+        className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory gap-6"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {testimonials.map((testimonial, index) => (
+          <div key={index} className={`min-w-[300px] md:min-w-[350px] snap-start animate-fadeInUp ${
+            index % 2 === 0 ? 'animate-floatGentle' : ''
+          } stagger-${index + 1}`}>
+            <div className="bg-white rounded-2xl p-6 shadow-xl h-full hover-lift transition-all duration-500 hover:shadow-2xl">
+              {/* Google Review Header */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#348AC7] rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">{testimonial.name.charAt(0)}</span>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-[#28104E] mb-3 group-hover:text-[#6237A0] transition-colors duration-300">
-                      {blog.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{blog.excerpt}</p>
+                  <div>
+                    <h4 className="font-bold text-[#2B4470] text-sm">{testimonial.name}</h4>
+                    <p className="text-[#348AC7] text-xs">{testimonial.condition}</p>
                   </div>
                 </div>
-              </Link>
-            ))}
+                <div className="text-right">
+                  <svg width="16" height="16" viewBox="0 0 48 48" className="mb-1">
+                    <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                    <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                    <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                    <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                  </svg>
+                  <p className="text-xs text-gray-500">Posted on Google</p>
+                </div>
+              </div>
+
+              <div className="flex mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} size={16} className={`text-[#F4E883] fill-current ${
+                    i % 2 === 0 ? 'animate-bounce' : 'animate-wiggle'
+                  } stagger-${i + 1}`} />
+                ))}
+              </div>
+
+              <p className="text-gray-600 leading-relaxed text-sm">"{testimonial.review}"</p>
+              
+              {/* Google Review Footer */}
+              <div className="mt-4 pt-3 border-t border-gray-100">
+                <div className="flex items-center justify-between text-xs text-gray-500">
+                  <span>Verified Google Review</span>
+                  <span>2 weeks ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Testimonial Indicators */}
+      <div className="flex justify-center mt-8 space-x-2">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentTestimonial(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-500 hover:scale-150 ${
+              index === currentTestimonial ? "bg-[#348AC7] animate-pulse" : "bg-white/30"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+      {/* Doctor Section */}
+      <section className="py-16 px-4 bg-white relative overflow-hidden">
+        <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-[#C7DDEB]/30 to-transparent rounded-full animate-float"></div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 animate-slideInDown">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2B4470] mb-4">Meet Our Expert</h2>
+            <p className="text-[#348AC7] text-lg">Experienced physiotherapist dedicated to your recovery</p>
           </div>
 
-          {/* Mobile Horizontal Scroll */}
-          <div className="md:hidden">
-            <div className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory gap-6 pb-4">
-              {blogs.map((blog, index) => (
-                <Link key={index} href={`/blog/${blog.slug}`}>
-                  <div className="min-w-[280px] snap-start bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:-translate-y-2 cursor-pointer">
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={blog.image || "/placeholder.svg"}
-                        alt={blog.title}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-lg font-bold text-[#28104E] mb-3 group-hover:text-[#6237A0] transition-colors duration-300">
-                        {blog.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">{blog.excerpt}</p>
-                    </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative animate-fadeInLeft">
+              <div className="relative">
+                <Image
+                  src={IMAGES.doctor.drSunil || "/placeholder.svg"}
+                  alt="Dr. Ram Kumar - Orthopaedic and Sports Physiotherapy"
+                  width={300}
+                  height={400}
+                  className="rounded-2xl shadow-xl object-cover w-full max-w-[250px] md:max-w-[300px] mx-auto hover-lift transition-all duration-500"
+                />
+                <div className="absolute -top-4 -right-4 w-16 h-16 bg-[#348AC7]/20 rounded-full animate-bounce"></div>
+                <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-[#D04A6B]/20 rounded-full animate-float"></div>
+              </div>
+            </div>
+
+            <div className="animate-fadeInRight stagger-2">
+              <h3 className="text-3xl font-bold text-[#2B4470] mb-2">Dr. Ram Kumar</h3>
+              <p className="text-xl text-[#348AC7] mb-6">Orthopaedic and Sports Physiotherapy</p>
+
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                With over 12 years of experience in physiotherapy, Dr. Ram Kumar specializes in orthopaedic and sports
+                physiotherapy. He has helped thousands of patients recover from various conditions and achieve optimal
+                physical health through personalized treatment plans.
+              </p>
+
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="text-center p-4 bg-[#C7DDEB] rounded-xl hover-lift animate-scaleIn stagger-1">
+                  <div className="flex items-center justify-center mb-2">
+                    <Award className="text-[#348AC7] animate-bounce" size={32} />
                   </div>
-                </Link>
-              ))}
+                  <h4 className="text-2xl font-bold text-[#2B4470]">12+</h4>
+                  <p className="text-[#348AC7] text-sm">Years Experience</p>
+                </div>
+                <div className="text-center p-4 bg-[#C7DDEB] rounded-xl hover-lift animate-scaleIn stagger-2">
+                  <div className="flex items-center justify-center mb-2">
+                    <Users className="text-[#348AC7] animate-bounce" size={32} />
+                  </div>
+                  <h4 className="text-2xl font-bold text-[#2B4470]">5K+</h4>
+                  <p className="text-[#348AC7] text-sm">Happy Customers</p>
+                </div>
+              </div>
+
+              <button
+                onClick={handleWhatsApp}
+                className="bg-[#D04A6B] hover:bg-[#348AC7] text-white px-8 py-4 rounded-full font-semibold transition-all duration-500 flex items-center gap-3 hover:scale-110 hover:shadow-xl"
+              >
+                <MessageCircle size={20} className="animate-bounce" />
+                Consult Dr. Ram Kumar
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Location Map Section */}
-      <section className="py-16 px-4 bg-[#DEACF5]">
+      <section className="py-16 px-4 bg-[#C7DDEB] relative overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#28104E] mb-4">Visit Our Clinic</h2>
-            <p className="text-[#6237A0] text-lg">Conveniently located for easy access</p>
+          <div className="text-center mb-12 animate-slideInDown">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2B4470] mb-4">Visit Our Clinic</h2>
+            <p className="text-[#348AC7] text-lg">Conveniently located for easy access</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-[#28104E] mb-6">Find Us Here</h3>
+            <div className="animate-fadeInLeft">
+              <h3 className="text-2xl font-bold text-[#2B4470] mb-6">Find Us Here</h3>
               <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#6237A0] p-3 rounded-full">
+                <div className="flex items-center gap-4 hover-lift transition-all duration-300">
+                  <div className="bg-[#348AC7] p-3 rounded-full animate-glow">
                     <MapPin className="text-white" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#28104E]">Address</h4>
-                    <p className="text-[#6237A0]">Oceyas Physio & Rehab, Bangalore</p>
+                    <h4 className="font-semibold text-[#2B4470]">Address</h4>
+                    <p className="text-[#348AC7]">Oceyas Physio & Rehab, Bangalore</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#6237A0] p-3 rounded-full">
+                <div className="flex items-center gap-4 hover-lift transition-all duration-300">
+                  <div className="bg-[#348AC7] p-3 rounded-full animate-glow">
                     <Phone className="text-white" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#28104E]">Phone</h4>
-                    <p className="text-[#6237A0]">+91 9916453616</p>
+                    <h4 className="font-semibold text-[#2B4470]">Phone</h4>
+                    <p className="text-[#348AC7]">+91 8075554529</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#6237A0] p-3 rounded-full">
+                <div className="flex items-center gap-4 hover-lift transition-all duration-300">
+                  <div className="bg-[#348AC7] p-3 rounded-full animate-glow">
                     <Clock className="text-white" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#28104E]">Hours</h4>
-                    <p className="text-[#6237A0]">Mon-Sat: 9AM-7PM, Sun: 10AM-5PM</p>
+                    <h4 className="font-semibold text-[#2B4470]">Hours</h4>
+                    <p className="text-[#348AC7]">Mon-Sat: 9AM-7PM, Sun: 10AM-5PM</p>
                   </div>
                 </div>
               </div>
@@ -567,16 +751,16 @@ export default function HomePage() {
               <div className="flex gap-4">
                 <button
                   onClick={handleWhatsApp}
-                  className="bg-[#9754CB] hover:bg-[#6237A0] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
+                  className="bg-[#D04A6B] hover:bg-[#348AC7] text-white px-6 py-3 rounded-full font-semibold transition-all duration-500 flex items-center gap-2 hover:scale-110"
                 >
-                  <MessageCircle size={20} />
+                  <MessageCircle size={20} className="animate-bounce" />
                   Get Directions
                 </button>
                 <a
                   href={MAPS_CONFIG.embedUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white text-[#6237A0] border-2 border-[#6237A0] hover:bg-[#6237A0] hover:text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
+                  className="bg-white text-[#348AC7] border-2 border-[#348AC7] hover:bg-[#348AC7] hover:text-white px-6 py-3 rounded-full font-semibold transition-all duration-500 flex items-center gap-2 hover:scale-110"
                 >
                   <MapPin size={20} />
                   Open in Maps
@@ -584,9 +768,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative h-[250px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl hover-lift animate-fadeInRight stagger-2">
               <iframe
-                src={MAPS_CONFIG.iframeUrl}
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939601.6441459893!2d77.83495749256022!3d15.362007070487993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1118a13a0831%3A0xac912a9695733139!2sOCEYAS%20PHYSIOTHERAPY%20%26%20REHAB%20CLINIC!5e0!3m2!1sen!2sin!4v1756984728381!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -600,128 +784,91 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#28104E] mb-8">Get in Touch</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="flex flex-col items-center">
-              <div className="bg-[#6237A0] p-4 rounded-full mb-4">
-                <Phone className="text-white" size={24} />
-              </div>
-              <h3 className="font-semibold text-[#28104E] mb-2">Call Us</h3>
-              <p className="text-[#6237A0]">+91 9916453616</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-[#6237A0] p-4 rounded-full mb-4">
-                <MapPin className="text-white" size={24} />
-              </div>
-              <h3 className="font-semibold text-[#28104E] mb-2">Visit Us</h3>
-              <p className="text-[#6237A0] text-center">
-                Oceyas Physio & Rehab
-                <br />
-                Physiotherapy & Rehab Center
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-[#6237A0] p-4 rounded-full mb-4">
-                <Clock className="text-white" size={24} />
-              </div>
-              <h3 className="font-semibold text-[#28104E] mb-2">Hours</h3>
-              <p className="text-[#6237A0] text-center">
-                Mon-Sat: 9AM-7PM
-                <br />
-                Sun: 10AM-5PM
-              </p>
-            </div>
-          </div>
-          <button
-            onClick={handleWhatsApp}
-            className="bg-[#9754CB] hover:bg-[#6237A0] text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 mx-auto"
-          >
-            <MessageCircle size={24} />
-            Start Your Recovery Journey
-          </button>
-        </div>
-      </section>
-
+      
       {/* Footer */}
-      <footer className="bg-[#28104E] text-white py-12 px-4">
+      <footer className="bg-[#2B4470] text-white py-12 px-4 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-2 animate-gradient"></div>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div>
+            <div className="animate-fadeInLeft">
               <h3 className="text-2xl font-bold mb-4">Oceyas Physio & Rehab</h3>
-              <p className="text-[#DEACF5] mb-4">
+              <p className="text-[#C7DDEB] mb-4">
                 Your trusted partner in physiotherapy and rehabilitation. Expert care for lasting recovery and optimal
-                health with Dr. Sunil's 12+ years of experience.
+                health with Dr. Ram Kumar's 12+ years of experience.
               </p>
               <button
                 onClick={handleWhatsApp}
-                className="bg-[#9754CB] hover:bg-[#6237A0] px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2"
+                className="bg-[#D04A6B] hover:bg-[#348AC7] px-6 py-3 rounded-full font-medium transition-all duration-500 flex items-center gap-2 hover:scale-110"
               >
-                <MessageCircle size={20} />
+                <MessageCircle size={20} className="animate-bounce" />
                 WhatsApp Us
               </button>
             </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4 text-[#DEACF5]">Quick Links</h4>
+            <div className="animate-fadeInUp stagger-2">
+              <h4 className="text-lg font-semibold mb-4 text-[#C7DDEB]">Quick Links</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="hover:text-[#9754CB] transition-colors duration-300">
+                  <Link href="/" className="hover:text-[#F4E883] transition-all duration-300 hover:translate-x-2">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="hover:text-[#9754CB] transition-colors duration-300">
+                  <Link href="/about" className="hover:text-[#F4E883] transition-all duration-300 hover:translate-x-2">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-[#9754CB] transition-colors duration-300">
+                  <Link href="/contact" className="hover:text-[#F4E883] transition-all duration-300 hover:translate-x-2">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <button onClick={handleWhatsApp} className="hover:text-[#9754CB] transition-colors duration-300">
+                  <button onClick={handleWhatsApp} className="hover:text-[#F4E883] transition-all duration-300 hover:translate-x-2">
                     Book Appointment
                   </button>
                 </li>
               </ul>
             </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4 text-[#DEACF5]">Contact Info</h4>
+            <div className="animate-fadeInRight stagger-3">
+              <h4 className="text-lg font-semibold mb-4 text-[#C7DDEB]">Contact Info</h4>
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Phone size={18} className="text-[#9754CB]" />
-                  <span>+91 9916453616</span>
+                <div className="flex items-center gap-3 hover:translate-x-2 transition-transform duration-300">
+                  <Phone size={18} className="text-[#348AC7]" />
+                  <span>+91 8075554529</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <MapPin size={18} className="text-[#9754CB]" />
+                <div className="flex items-center gap-3 hover:translate-x-2 transition-transform duration-300">
+                  <MapPin size={18} className="text-[#348AC7]" />
                   <span>Oceyas Physio & Rehab, Bangalore</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Clock size={18} className="text-[#9754CB]" />
+                <div className="flex items-center gap-3 hover:translate-x-2 transition-transform duration-300">
+                  <Clock size={18} className="text-[#348AC7]" />
                   <span>Mon-Sat: 9AM-7PM</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="border-t border-[#6237A0] pt-8 text-center">
-            <p className="text-[#DEACF5]">
+          <div className="border-t border-[#348AC7] pt-8 text-center animate-fadeInUp stagger-4">
+            <p className="text-[#C7DDEB]">
               © 2024 Oceyas Physio & Rehab. All rights reserved. | Physiotherapy & Rehabilitation Center
             </p>
           </div>
         </div>
       </footer>
 
-      {/* Sticky WhatsApp Button */}
-      <button
-        onClick={handleWhatsApp}
-        className="fixed bottom-6 right-6 bg-[#9754CB] hover:bg-[#6237A0] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 flex items-center gap-2 group"
-      >
-        <MessageCircle size={24} />
-        <span className="hidden group-hover:inline-block text-sm font-medium pr-2 animate-fade-in">Chat with us</span>
-      </button>
+     {/* Enhanced Sticky WhatsApp Button */}
+<button
+  onClick={handleWhatsApp}
+  className="fixed bottom-6 right-6 z-50 hover:scale-110 transition-all duration-300 rounded-xl overflow-hidden"
+>
+  <Image 
+    src="/wa.jpg"
+    alt="Chat on WhatsApp"
+    width={60}
+    height={60}
+    className="drop-shadow-lg hover:drop-shadow-2xl rounded-xl"
+  />
+</button>
+
     </div>
   )
 }

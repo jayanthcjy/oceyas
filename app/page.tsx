@@ -73,7 +73,7 @@ export default function HomePage() {
   const whyUsFeatures = [
     {
       title: "Root Cause Identification",
-      description: "We don't just treat pain, we find what's causing it.",
+      description: "We don't just treat pain, we find what's causing problem.",
       number: "1",
     },
     {
@@ -91,37 +91,37 @@ export default function HomePage() {
   const services = [
     {
       title: "Physio and Rehab",
-      description: "Comprehensive rehabilitation programs for complete recovery.",
-      href: "/services/rehabilitation",
+      description: "Personalized therapy to restore movement faster",
+      href: "/services/physio&rehab",
       image: IMAGES.serviceDetails.rehabDetail,
     },
     {
       title: "Home Care Physio",
-      description: "Specialized programs for home care physiotherapy and improvement.",
-      href: "/services/posture-correction",
+      description: "Expert physiotherapy delivered at home",
+      href: "/services/home-care-physio",
       image: IMAGES.serviceDetails.postureCorrectionDetail,
     },
     {
-      title: "Home Nurse",
-      description: "Professional trigger point therapy for pain relief.",
-      href: "/services/trigger-point-therapy",
+      title: "Home Nursing",
+      description: "Professional nursing support for daily recovery",
+      href: "/services/home-nursing",
       image: IMAGES.serviceDetails.myofascialDetail,
     },
     {
       title: "Care Taker",
-      description: "Traditional care taker services for pain management and healing.",
-      href: "/services/acupuncture",
+      description: "Compassionate assistance for comfort and safety",
+      href: "/services/care-taker",
       image: IMAGES.serviceDetails.acupunctureDetail,
     },
     {
       title: "Sports Injury",
-      description: "Expert treatment for sports-related injuries and rehabilitation.",
+      description: "Targeted rehab to return to play.",
       href: "/services/sports-injury",
       image: IMAGES.serviceDetails.sportsInjuryDetail,
     },
     {
       title: "Spine Care",
-      description: "Expert spinal health treatment and comprehensive back care solutions.",
+      description: "Evidence‑based treatment for lasting back relief",
       href: "/services/spine-care",
       image: IMAGES.serviceDetails.spinecareDetail,
     }
@@ -706,83 +706,83 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Location Map Section */}
-      <section className="py-16 px-4 bg-[#C7DDEB] relative overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 animate-slideInDown">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2B4470] mb-4">Visit Our Clinic</h2>
-            <p className="text-[#348AC7] text-lg">Conveniently located for easy access</p>
-          </div>
+     {/* Location Map Section - Compressed */}
+<section className="py-10 px-4 bg-[#C7DDEB] relative overflow-hidden">
+  <div className="absolute top-0 left-1/4 w-16 h-16 bg-white/10 rounded-full animate-floatSlow"></div>
+  <div className="max-w-5xl mx-auto">
+    <div className="text-center mb-8 animate-slideInDown">
+      <h2 className="text-xl md:text-2xl font-bold text-[#2B4470] mb-2">Visit Our Clinic</h2>
+      <p className="text-[#348AC7] text-sm">Conveniently located for easy access</p>
+    </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fadeInLeft">
-              <h3 className="text-2xl font-bold text-[#2B4470] mb-6">Find Us Here</h3>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-4 hover-lift transition-all duration-300">
-                  <div className="bg-[#348AC7] p-3 rounded-full animate-glow">
-                    <MapPin className="text-white" size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-[#2B4470]">Address</h4>
-                    <p className="text-[#348AC7]">Oceyas Physio & Rehab, Bangalore</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 hover-lift transition-all duration-300">
-                  <div className="bg-[#348AC7] p-3 rounded-full animate-glow">
-                    <Phone className="text-white" size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-[#2B4470]">Phone</h4>
-                    <p className="text-[#348AC7]">+91 8075554529</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 hover-lift transition-all duration-300">
-                  <div className="bg-[#348AC7] p-3 rounded-full animate-glow">
-                    <Clock className="text-white" size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-[#2B4470]">Hours</h4>
-                    <p className="text-[#348AC7]">Mon-Sat: 9AM-7PM, Sun: 10AM-5PM</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <button
-                  onClick={handleWhatsApp}
-                  className="bg-[#D04A6B] hover:bg-[#348AC7] text-white px-6 py-3 rounded-full font-semibold transition-all duration-500 flex items-center gap-2 hover:scale-110"
-                >
-                  <MessageCircle size={20} className="animate-bounce" />
-                  Get Directions
-                </button>
-                <a
-                  href={MAPS_CONFIG.embedUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white text-[#348AC7] border-2 border-[#348AC7] hover:bg-[#348AC7] hover:text-white px-6 py-3 rounded-full font-semibold transition-all duration-500 flex items-center gap-2 hover:scale-110"
-                >
-                  <MapPin size={20} />
-                  Open in Maps
-                </a>
-              </div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div className="animate-fadeInLeft">
+        <h3 className="text-lg md:text-xl font-bold text-[#2B4470] mb-5">Find Us Here</h3>
+        <div className="space-y-3 mb-6">
+          <div className="flex items-center gap-3 hover-lift transition-all duration-300 animate-floatGentle">
+            <div className="bg-[#348AC7] p-2.5 rounded-full animate-pulse">
+              <MapPin className="text-white" size={18} />
             </div>
-
-            <div className="relative h-[250px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl hover-lift animate-fadeInRight stagger-2">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939601.6441459893!2d77.83495749256022!3d15.362007070487993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1118a13a0831%3A0xac912a9695733139!2sOCEYAS%20PHYSIOTHERAPY%20%26%20REHAB%20CLINIC!5e0!3m2!1sen!2sin!4v1756984728381!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-2xl"
-              />
+            <div>
+              <h4 className="font-semibold text-[#2B4470] text-sm">Address</h4>
+              <p className="text-[#348AC7] text-sm">Oceyas Physio & Rehab, Bangalore</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 hover-lift transition-all duration-300 animate-sway">
+            <div className="bg-[#348AC7] p-2.5 rounded-full animate-wiggle">
+              <Phone className="text-white" size={18} />
+            </div>
+            <div>
+              <h4 className="font-semibold text-[#2B4470] text-sm">Phone</h4>
+              <p className="text-[#348AC7] text-sm">+91 8075554529</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 hover-lift transition-all duration-300 animate-floatSlow">
+            <div className="bg-[#348AC7] p-2.5 rounded-full animate-pulse">
+              <Clock className="text-white" size={18} />
+            </div>
+            <div>
+              <h4 className="font-semibold text-[#2B4470] text-sm">Hours</h4>
+              <p className="text-[#348AC7] text-sm">Mon-Sat: 9AM-7PM, Sun: 10AM-5PM</p>
             </div>
           </div>
         </div>
-      </section>
+
+        <div className="flex flex-col sm:flex-row gap-3">
+          <button
+            onClick={handleWhatsApp}
+            className="bg-[#D04A6B] hover:bg-[#348AC7] text-white px-5 py-2.5 rounded-2xl font-semibold text-sm transition-all duration-500 flex items-center justify-center gap-2 hover:scale-110"
+          >
+            <MessageCircle size={18} className="animate-floatGentle" />
+            Get Directions
+          </button>
+          <a
+            href={MAPS_CONFIG.embedUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-[#348AC7] border-2 border-[#348AC7] hover:bg-[#348AC7] hover:text-white px-5 py-2.5 rounded-2xl font-semibold text-sm transition-all duration-500 flex items-center justify-center gap-2 hover:scale-110"
+          >
+            <MapPin size={18} />
+            Open in Maps
+          </a>
+        </div>
+      </div>
+
+      <div className="relative h-[220px] md:h-[300px] rounded-2xl overflow-hidden shadow-xl hover-lift animate-fadeInRight animate-floatSlow stagger-2">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939601.6441459893!2d77.83495749256022!3d15.362007070487993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1118a13a0831%3A0xac912a9695733139!2sOCEYAS%20PHYSIOTHERAPY%20%26%20REHAB%20CLINIC!5e0!3m2!1sen!2sin!4v1756984728381!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="rounded-2xl"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
       
       {/* Footer */}
@@ -849,7 +849,7 @@ export default function HomePage() {
           </div>
           <div className="border-t border-[#348AC7] pt-8 text-center animate-fadeInUp stagger-4">
             <p className="text-[#C7DDEB]">
-              © 2024 Oceyas Physio & Rehab. All rights reserved. | Physiotherapy & Rehabilitation Center
+              © Oceyas Physio & Rehab. All rights reserved. | Physiotherapy & Rehabilitation Center
             </p>
           </div>
         </div>

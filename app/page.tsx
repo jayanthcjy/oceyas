@@ -196,7 +196,7 @@ export default function HomePage() {
     title: "Home Nursing",
     description: "Professional nursing support for daily recovery",
     href: "/services/home-nursing",
-    image: IMAGES.serviceDetails.myofascialDetail,
+    image: IMAGES.serviceDetails.homeNurseDetail,
   },
   
     {

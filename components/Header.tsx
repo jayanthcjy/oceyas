@@ -6,14 +6,17 @@ import { Menu, X, ChevronDown, MessageCircle } from "lucide-react"
 import { WHATSAPP_CONFIG } from "@/config/images"
 
 const services = [
-  { name: "Care Taker", href: "/services/care-taker" },
-  { name: "Diabetic Care", href: "/services/diabetes-wound-healing" },
+  
+ 
   { name: "Home Care Physio", href: "/services/home-care-physio" },
-  { name: "Home Nursing", href: "/services/home-nursing" },
+  
   { name: "Physio and Rehab", href: "/services/physio&rehab" },
   { name: "Posture Correction", href: "/services/posture-correction" },
-  { name: "Spine Care", href: "/services/spine-care" },
+  { name: "Home Nursing", href: "/services/home-nursing" },
+  { name: "Care Taker", href: "/services/care-taker" },
   { name: "Sports Injury", href: "/services/sports-injury" },
+  { name: "Spine Care", href: "/services/spine-care" },
+  { name: "Diabetic Care", href: "/services/diabetes-wound-healing" },
   { name: "Varicose Vein Treatment", href: "/services/varicose-vein-treatment" },
   { name: "Overseas Admissions", href: "/services/overseas-medicine-admissions" },
 ]

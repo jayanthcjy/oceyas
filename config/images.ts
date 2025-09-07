@@ -5,15 +5,14 @@ export const IMAGES = {
   // Hero Section Images
   hero: {
     homecare:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/home_care_sndqqm.jpg?height=300&width=400",
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226823/home_care_ealm1p.jpg?height=300&width=400",
     spinecare:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753366511/SpineCare2_aawznj.png?height=300&width=400",
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757238898/spine_care_k9bsmc.jpg?height=300&width=400",
     postureCorrection:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753428096/manTigger_1_wbv92o.jpg?height=300&width=400",
-    triggerPoint:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753427389/Trigger_tefvxp.png?height=300&width=400",
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757238896/Posture_hero_hl7xxi.jpg?height=300&width=400",
+    
     sportsInjury:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753427627/injury_1_bfmjcb.png?height=300&width=400",
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757238896/sports_hero_ueygbe.jpg?height=300&width=400",
   },
 
   // Services Section Images
@@ -22,7 +21,7 @@ export const IMAGES = {
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753427389/triggerPoint_smqhxo.png?height=200&width=300",
     postureCorrection:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753427389/Posture_ntfuft.png?height=200&width=300",
-    myofascial:
+    homeNurse:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753427935/triger_1_mo0550.png?height=200&width=300",
     sportsInjury:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753411214/Sports_injury2_fsbukx.png?height=200&width=300",
@@ -76,7 +75,7 @@ export const IMAGES = {
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753366513/spineCare_yl95p1.png?height=400&width=600",
     postureCorrectionDetail:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757218779/Posture_adu4qr.jpg?height=400&width=600",
-    myofascialDetail:
+    homeNurseDetail:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/Home_Nurse_kfxxc8.jpg?height=400&width=600",
     sportsInjuryDetail:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753410205/sportsInjury_ducujw.png?height=400&width=600",

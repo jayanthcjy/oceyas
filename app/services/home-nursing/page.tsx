@@ -118,7 +118,7 @@ export default function HomeNursePage() {
             </div>
             <div className="relative animate-fade-in-right opacity-0">
               <Image
-                src={IMAGES.serviceDetails.myofascialDetail || "/placeholder.svg"}
+                src={IMAGES.serviceDetails.homeNurseDetail || "/placeholder.svg"}
                 alt="Home Nursing Services"
                 width={500}
                 height={350}

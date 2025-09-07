@@ -174,28 +174,10 @@ export default function HomePage() {
 
   const services = [
   {
-    title: "Care Taker",
-    description: "Compassionate assistance for comfort and safety",
-    href: "/services/care-taker",
-    image: IMAGES.serviceDetails.acupunctureDetail,
-  },
-  {
-    title: "Diabetes Wound Healing",
-    description: "Specialized care to promote diabetic wound healing",
-    href: "/services/diabetes-wound-healing",
-    image: IMAGES.serviceDetails.diabetesWoundHealingDetail,
-  },
-  {
     title: "Home Care Physio",
     description: "Expert physiotherapy delivered at home",
     href: "/services/home-care-physio",
     image: IMAGES.serviceDetails.homecare,
-  },
-  {
-    title: "Home Nursing",
-    description: "Professional nursing support for daily recovery",
-    href: "/services/home-nursing",
-    image: IMAGES.serviceDetails.myofascialDetail,
   },
   {
     title: "Physio and Rehab",
@@ -210,16 +192,36 @@ export default function HomePage() {
     image: IMAGES.serviceDetails.postureCorrectionDetail,
   },
   {
+    title: "Home Nursing",
+    description: "Professional nursing support for daily recovery",
+    href: "/services/home-nursing",
+    image: IMAGES.serviceDetails.myofascialDetail,
+  },
+  
+    {
+    title: "Care Taker",
+    description: "Compassionate assistance for comfort and safety",
+    href: "/services/care-taker",
+    image: IMAGES.serviceDetails.acupunctureDetail,
+  },
+    {
+    title: "Sports Injury",
+    description: "Targeted rehab to return to play.",
+    href: "/services/sports-injury",
+    image: IMAGES.serviceDetails.sportsInjuryDetail,
+  },  
+  {
     title: "Spine Care",
     description: "Evidence‑based treatment for lasting back relief",
     href: "/services/spine-care",
     image: IMAGES.serviceDetails.spinecareDetail,
   },
+  
   {
-    title: "Sports Injury",
-    description: "Targeted rehab to return to play.",
-    href: "/services/sports-injury",
-    image: IMAGES.serviceDetails.sportsInjuryDetail,
+    title: "Diabetes Wound Healing",
+    description: "Specialized care to promote diabetic wound healing",
+    href: "/services/diabetes-wound-healing",
+    image: IMAGES.serviceDetails.diabetesWoundHealingDetail,
   },
   {
     title: "Varicose Vein Treatment",

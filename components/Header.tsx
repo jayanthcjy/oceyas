@@ -36,7 +36,7 @@ export default function Header() {
           {/* Logo block */}
           <Link href="/" className="flex items-center">
             <div className="leading-tight text-center md:text-left">
-              <h1 className="text-xl md:text-2xl font-bold">Oceyas</h1>
+              <h1 className="text-xl md:text-2xl font-bold">OCEYAS</h1>
               <p className="text-xs text-white/80">Healthe Care</p>
             </div>
           </Link>

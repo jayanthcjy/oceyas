@@ -4,12 +4,12 @@ import Header from "@/components/Header"
 import { IMAGES, WHATSAPP_CONFIG } from "@/config/images"
 import { 
   MessageCircle, 
+  Activity, 
   Heart, 
-  Users, 
   Shield, 
-  Clock, 
-  Home, 
-  Activity,
+  Droplets, 
+  Leaf, 
+  Wind,
   CheckCircle,
   Star, 
   Target 
@@ -17,7 +17,7 @@ import {
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 
-export default function CareTakerPage() {
+export default function PanchakarmaPage() {
   const handleWhatsApp = () => {
     window.open(WHATSAPP_CONFIG.getWhatsAppUrl(), "_blank")
   }
@@ -48,46 +48,46 @@ export default function CareTakerPage() {
     return [ref, isVisible]
   }
 
-  const commonConditions = [
+  const panchakarmaTreatments = [
     {
-      title: "Elderly Assistance",
-      description: "Daily living support for senior citizens",
-      icon: Users
-    },
-    {
-      title: "Personal Care",
-      description: "Bathing, grooming, and personal hygiene assistance",
-      icon: Heart
-    },
-    {
-      title: "Mobility Support",
-      description: "Walking, transfers, and movement assistance",
+      title: "Vamana (Therapeutic Vomiting)",
+      description: "Eliminates toxins from upper digestive tract and respiratory system",
       icon: Activity
     },
     {
-      title: "Medication Reminders",
-      description: "Ensuring proper medication compliance",
-      icon: Clock
+      title: "Virechana (Purgation Therapy)",
+      description: "Cleanses liver and intestines through herbal purgation",
+      icon: Droplets
     },
     {
-      title: "Companionship",
-      description: "Social interaction and emotional support",
+      title: "Basti (Medicated Enema)",
+      description: "Detoxifies colon using medicated oils and herbal decoctions",
+      icon: Target
+    },
+    {
+      title: "Nasya (Nasal Administration)",
+      description: "Clears upper respiratory tract through nasal therapy",
+      icon: Wind
+    },
+    {
+      title: "Raktamokshana (Bloodletting)",
+      description: "Purifies blood and treats skin disorders naturally",
+      icon: Heart
+    },
+    {
+      title: "Complete Body Rejuvenation",
+      description: "Full detoxification and restoration of natural balance",
       icon: Shield
-    },
-    {
-      title: "Safety Monitoring",
-      description: "24/7 supervision and emergency response",
-      icon: Home
     }
   ]
 
   const treatments = [
-    "Personal hygiene and grooming assistance",
-    "Meal preparation and feeding support",
-    "Medication administration reminders",
-    "Light housekeeping and organization",
-    "Transportation to appointments",
-    "Emotional support and companionship"
+    "Comprehensive Ayurvedic constitution assessment and diagnosis",
+    "Purvakarma preparation with oleation and steam therapy",
+    "Customized panchakarma treatments based on individual needs",
+    "Herbal medicines and medicated oils for deeper cleansing",
+    "Specialized Ayurvedic diet plan during treatment period",
+    "Post-treatment rejuvenation therapy and lifestyle guidance"
   ]
 
   return (
@@ -100,11 +100,11 @@ export default function CareTakerPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="animate-fade-in-left opacity-0">
               <h1 className="text-3xl md:text-4xl font-bold text-[#2B4470] mb-4 leading-tight">
-                Professional Care Taker Services
+                Panchakarma Treatment
               </h1>
               <p className="text-lg text-[#348AC7] mb-6 leading-relaxed">
-                Compassionate and reliable care taker services for your loved ones. 
-                Providing dignity, comfort, and support in daily living activities.
+                Authentic Ayurvedic detoxification and rejuvenation therapy through five sacred actions. 
+                Deep cleansing to eliminate toxins and restore natural balance for optimal health.
               </p>
               <div className="flex justify-center sm:justify-start">
                 <button
@@ -112,14 +112,14 @@ export default function CareTakerPage() {
                   className="bg-[#D04A6B] hover:bg-[#348AC7] text-white px-6 py-3 rounded-2xl font-semibold transition-all duration-300 flex items-center gap-2 justify-center hover:scale-105 shadow-lg hover:shadow-xl animate-pulse"
                 >
                   <MessageCircle size={18} />
-                  Book Care Taker
+                  Book Consultation
                 </button>
               </div>
             </div>
             <div className="relative animate-fade-in-right opacity-0">
               <Image
-                src={IMAGES.serviceDetails.careTakerDetail || "/placeholder.svg"}
-                alt="Professional Care Taker Services"
+                src={IMAGES.serviceDetails.panchakarmaDetail || "/placeholder.svg"}
+                alt="Panchakarma Treatment"
                 width={500}
                 height={350}
                 className="rounded-2xl shadow-xl object-cover w-full hover:scale-105 transition-transform duration-700"
@@ -129,22 +129,22 @@ export default function CareTakerPage() {
         </div>
       </section>
 
-      {/* Common Conditions Section */}
+      {/* Panchakarma Therapies Section */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10 animate-fade-in-up opacity-0">
             <h2 className="text-2xl md:text-3xl font-bold text-[#2B4470] mb-4">
-              Care Services We Provide
+              The Five Sacred Actions of Panchakarma
             </h2>
             <p className="text-[#348AC7] text-base max-w-2xl mx-auto">
-              Comprehensive care taker services designed to support independence 
-              and improve quality of life for individuals needing assistance.
+              Comprehensive Ayurvedic detoxification therapies designed to eliminate 
+              deep-seated toxins and restore the body's natural healing intelligence.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {commonConditions.map((condition, index) => {
-              const IconComponent = condition.icon
+            {panchakarmaTreatments.map((treatment, index) => {
+              const IconComponent = treatment.icon
               const [ref, isVisible] = useScrollAnimation()
               
               return (
@@ -168,10 +168,10 @@ export default function CareTakerPage() {
                     />
                   </div>
                   <h3 className="text-sm md:text-lg font-bold text-[#2B4470] mb-2 text-center group-hover:text-[#348AC7] transition-colors duration-300">
-                    {condition.title}
+                    {treatment.title}
                   </h3>
                   <p className="text-[#348AC7] text-xs md:text-sm text-center hidden md:block">
-                    {condition.description}
+                    {treatment.description}
                   </p>
                 </div>
               )
@@ -185,11 +185,11 @@ export default function CareTakerPage() {
         <div className="max-w-5xl mx-auto">
           <div className="animate-fade-in-up opacity-0">
             <h2 className="text-2xl md:text-3xl font-bold text-[#2B4470] mb-4 text-center">
-              Our Care Approach
+              Our Panchakarma Treatment Process
             </h2>
             <p className="text-[#348AC7] text-base mb-8 leading-relaxed text-center max-w-3xl mx-auto">
-              We provide compassionate, person-centered care that respects dignity 
-              while supporting independence and well-being.
+              Traditional Ayurvedic approach combining ancient wisdom with personalized care 
+              for complete detoxification, healing, and rejuvenation of body and mind.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
@@ -229,15 +229,15 @@ export default function CareTakerPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in-up opacity-0 mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-[#2B4470] mb-4">
-              Why Choose Our Care Taker Services?
+              Why Choose Our Panchakarma Treatment?
             </h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: Heart, title: "Compassionate Care", desc: "Caring professionals with empathy and patience" },
-              { icon: Shield, title: "Trusted & Reliable", desc: "Background-checked and trained care providers" },
-              { icon: Clock, title: "Flexible Scheduling", desc: "24/7 care options available when needed" }
+              { icon: Star, title: "Authentic Ayurveda", desc: "Traditional five-action therapy following ancient principles" },
+              { icon: Leaf, title: "Complete Detox", desc: "Deep cleansing eliminating toxins from all body systems" },
+              { icon: Heart, title: "Holistic Healing", desc: "Balances body, mind, and spirit for lasting wellness" }
             ].map((benefit, index) => {
               const IconComponent = benefit.icon
               const [ref, isVisible] = useScrollAnimation()
@@ -278,18 +278,18 @@ export default function CareTakerPage() {
       <section className="py-12 px-4 bg-[#C7DDEB]">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up opacity-0">
           <h2 className="text-2xl md:text-3xl font-bold text-[#2B4470] mb-4">
-            Need Professional Care Taker Services?
+            Ready to Begin Your Ayurvedic Detox Journey?
           </h2>
           <p className="text-[#348AC7] text-base mb-6 max-w-2xl mx-auto">
-            Ensure your loved ones receive the compassionate care they deserve. 
-            Contact us to discuss personalized care taker services.
+            Experience the transformative power of authentic Panchakarma treatment. 
+            Our expert Ayurvedic practitioners will guide you through a personalized detoxification program.
           </p>
           <button
             onClick={handleWhatsApp}
             className="bg-[#D04A6B] hover:bg-[#348AC7] text-white px-8 py-4 rounded-2xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 mx-auto hover:scale-110 animate-bounce"
           >
             <MessageCircle size={24} />
-            Request Care Services
+            Start Your Treatment
           </button>
         </div>
       </section>
@@ -299,7 +299,7 @@ export default function CareTakerPage() {
         <div className="max-w-5xl mx-auto text-center animate-fade-in-up opacity-0">
           <h3 className="text-lg font-bold mb-2">Oceyas Physiotherapy & Rehab clinic</h3>
           <p className="text-[#C7DDEB] text-sm mb-4">
-            Professional care taker services with compassion and dignity
+            Authentic Ayurvedic Panchakarma for complete wellness and vitality
           </p>
           <p className="text-[#C7DDEB] text-xs">
             © Oceyas Physiotherapy & Rehab clinic. All rights reserved.

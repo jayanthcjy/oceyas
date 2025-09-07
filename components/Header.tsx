@@ -6,14 +6,13 @@ import { Menu, X, ChevronDown, MessageCircle } from "lucide-react"
 import { WHATSAPP_CONFIG } from "@/config/images"
 
 const services = [
-  
- 
-  { name: "Home Care Physio", href: "/services/home-care-physio" },
-  
+   
   { name: "Physio and Rehab", href: "/services/physio&rehab" },
-  { name: "Posture Correction", href: "/services/posture-correction" },
+  { name: "Home Care Physio", href: "/services/home-care-physio" },
   { name: "Home Nursing", href: "/services/home-nursing" },
   { name: "Care Taker", href: "/services/care-taker" },
+  { name: "Panchakarma Treatment", href: "/services/panchakarma-treatment" },
+  { name: "Posture Correction", href: "/services/posture-correction" },
   { name: "Sports Injury", href: "/services/sports-injury" },
   { name: "Spine Care", href: "/services/spine-care" },
   { name: "Diabetic Care", href: "/services/diabetes-wound-healing" },

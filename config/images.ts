@@ -4,8 +4,8 @@
 export const IMAGES = {
   // Hero Section Images
   hero: {
-    homecare:
-      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226823/home_care_ealm1p.jpg?height=300&width=400",
+    physioAndRehab:
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757243751/physio_hero_gyhezy.jpg?height=300&width=400",
     spinecare:
       "https://res.cloudinary.com/dcztmndcd/image/upload/v1757238898/spine_care_k9bsmc.jpg?height=300&width=400",
     postureCorrection:
@@ -13,25 +13,6 @@ export const IMAGES = {
     
     sportsInjury:
       "https://res.cloudinary.com/dcztmndcd/image/upload/v1757238896/sports_hero_ueygbe.jpg?height=300&width=400",
-  },
-
-  // Services Section Images
-  services: {
-    spinecare:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753427389/triggerPoint_smqhxo.png?height=200&width=300",
-    postureCorrection:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753427389/Posture_ntfuft.png?height=200&width=300",
-    homeNurse:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753427935/triger_1_mo0550.png?height=200&width=300",
-    sportsInjury:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753411214/Sports_injury2_fsbukx.png?height=200&width=300",
-    acupuncture:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753366505/Accupenture_ow64a4.png?height=200&width=300",
-    rehab: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753411680/Rehab_tqgalh.png?height=200&width=300",
-    onlineSessions:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753429599/ONlineSessions_hyiybx.png?height=200&width=300",
-    preventive:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753429598/PreventiveThrapy_tfljfu.png?height=200&width=300",
   },
 
   // Testimonials
@@ -53,46 +34,39 @@ export const IMAGES = {
 
   // Doctor Section
   doctor: {
-    drRamKumar: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037425/DrRam_vzq6gm.jpg?height=400&width=300",
-    genericDoctor: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037425/DrRam_vzq6gm.jpg?height=400&width=500", // New image for service pages
+    drRamKumar: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226823/DrRam_lbxxr1.jpg?height=400&width=300",
+    genericDoctor: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226823/DrRam_lbxxr1.jpg.jpg?height=400&width=500", // New image for service pages
   },
 
   
 
-  // Blog Section
-  blog: {
-    blog1: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753434667/backpain_hwxioc.jpg?height=200&width=300",
-    blog2: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753434667/seupdesk_vlb6sr.jpg?height=200&width=300",
-    blog3: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753410205/sportsInjury_ducujw.png?height=200&width=300",
-    blog4: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753410772/triggerPoint_nwap6r.png?height=200&width=300",
-  },
+ 
 
   // Service Detail Pages
   serviceDetails: {
     homecare:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/home_care_sndqqm.jpg?height=300&width=400",
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226823/home_care_ealm1p.jpg?height=300&width=400",
     spinecareDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753366513/spineCare_yl95p1.png?height=400&width=600",
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757244719/spine_care_2_z7wgkx.jpg?height=400&width=600",
     postureCorrectionDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757218779/Posture_adu4qr.jpg?height=400&width=600",
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226825/Posture_qf8gqw.jpg?height=400&width=600",
     homeNurseDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/Home_Nurse_kfxxc8.jpg?height=400&width=600",
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226823/Home_Nurse_vxnzqi.jpg?height=400&width=600",
     sportsInjuryDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753410205/sportsInjury_ducujw.png?height=400&width=600",
-    acupunctureDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/Care_Taker_klnmgz.jpg?height=400&width=600",
-    rehabDetail: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/physio_jmitdr.jpg?height=400&width=600",
-    onlineSessionsDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753366505/OnlineSessions_pr1o05.png?height=400&width=600",
-    preventiveDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753427388/post_pdb1ju.png?height=400&width=600",
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757244848/sports_htzgvb.jpg?height=400&width=600",
+    careTakerDetail:
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226823/Care_Taker_otr3kw.jpg?height=400&width=600",
+    rehabDetail: 
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226825/physio_ggr4ee.jpg?height=400&width=600",
+    panchakarmaDetail:
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757243751/Pancha_aae5ab.jpg?height=400&width=600",
   
     overseasMedicineDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757218716/Overseas_if8s1b.jpg?height=400&width=600",
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226824/Overseas_vcsyiu.jpg?height=400&width=600",
     diabetesWoundHealingDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757218715/Dieabetic_xsdpgk.jpg?height=400&width=600",
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226827/Dieabetic_nawegl.jpg?height=400&width=600",
     varicoseVeinDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757218990/Vein_bcnthf.jpg?height=400&width=600",  
+      "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226825/Vein_tjpsao.jpg?height=400&width=600",  
     },
 
 
@@ -105,22 +79,6 @@ export const IMAGES = {
     monitoring: "/placeholder.svg?height=100&width=100",
   },
 
-
-
-  // About Us Page
-  about: {
-    clinicInterior:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753435113/Namma1_nplbhs.png?height=400&width=600",
-    equipment: "/placeholder.svg?height=300&width=400",
-    team: "/placeholder.svg?height=300&width=400",
-  },
-
-  // Contact Us Page
-  contact: {
-    clinicExterior:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753435113/Namma1_nplbhs.png?height=300&width=500",
-    reception: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753435113/Namma1_nplbhs.png?height=250&width=400",
-  },
 
   // Header and Navigation
   navigation: {

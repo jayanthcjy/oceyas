@@ -103,9 +103,9 @@ export default function HomePage() {
 
   const heroSlides = [
     {
-      title: "HomeCare Physio",
-      image: IMAGES.hero.homecare,
-      description: "Physiotherapy care at your home",
+      title: "Physio and Rehab",
+      image: IMAGES.hero.physioAndRehab,
+      description: "Physiotherapy restores movement faster",
     },
     {
       title: "Spine Care",
@@ -175,23 +175,19 @@ export default function HomePage() {
 
   const services = [
   {
-    title: "Home Care Physio",
-    description: "Expert physiotherapy delivered at home",
-    href: "/services/home-care-physio",
-    image: IMAGES.serviceDetails.homecare,
-  },
-  {
     title: "Physio and Rehab",
     description: "Personalized therapy to restore movement faster",
     href: "/services/physio&rehab",
     image: IMAGES.serviceDetails.rehabDetail,
   },
-  {
-    title: "Posture Correction",
-    description: "Improve your posture for better health and confidence",
-    href: "/services/posture-correction",
-    image: IMAGES.serviceDetails.postureCorrectionDetail,
+    {
+    title: "Home Care Physio",
+    description: "Expert physiotherapy delivered at home",
+    href: "/services/home-care-physio",
+    image: IMAGES.serviceDetails.homecare,
   },
+  
+  
   {
     title: "Home Nursing",
     description: "Professional nursing support for daily recovery",
@@ -203,8 +199,21 @@ export default function HomePage() {
     title: "Care Taker",
     description: "Compassionate assistance for comfort and safety",
     href: "/services/care-taker",
-    image: IMAGES.serviceDetails.acupunctureDetail,
+    image: IMAGES.serviceDetails.careTakerDetail,
   },
+   {
+    title: "Panchakarma Treatment",
+    description: "Holistic Ayurvedic detox and rejuvenation therapy",
+    href: "/services/panchakarma-treatment",
+    image: IMAGES.serviceDetails.panchakarmaDetail,
+  },
+  {
+    title: "Posture Correction",
+    description: "Improve your posture for better health and confidence",
+    href: "/services/posture-correction",
+    image: IMAGES.serviceDetails.postureCorrectionDetail,
+  },
+ 
     {
     title: "Sports Injury",
     description: "Targeted rehab to return to play.",

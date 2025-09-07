@@ -128,6 +128,12 @@ export default function HomePage() {
 
   const testimonials = [
     {
+      name: "Meera Patel",
+      review: "Home care physio therapy sessions were so convenient and effective. Highly recommend Oceyas Physiotherapy & Rehab clinic!",
+      rating: 5,
+      condition: "Home Care Physio",
+    },
+    {
       name: "Rajesh Kumar",
       review:
         "Dr. Ram Kumar's treatment completely transformed my chronic back pain. After 12+ years of experience, he knows exactly what works!",
@@ -146,12 +152,7 @@ export default function HomePage() {
       rating: 5,
       condition: "Sports Injury",
     },
-    {
-      name: "Meera Patel",
-      review: "Online sessions were so convenient and effective. Highly recommend Oceyas Physiotherapy & Rehab clinic!",
-      rating: 5,
-      condition: "Online Therapy",
-    },
+    
   ]
 
   const whyUsFeatures = [

@@ -130,7 +130,7 @@ export default function HomePage() {
     {
       name: "Rajesh Kumar",
       review:
-        "Dr. Sunil's treatment completely transformed my chronic back pain. After 12+ years of experience, he knows exactly what works!",
+        "Dr. Ram Kumar's treatment completely transformed my chronic back pain. After 12+ years of experience, he knows exactly what works!",
       rating: 5,
       condition: "Back Pain Relief",
     },
@@ -173,63 +173,62 @@ export default function HomePage() {
   ]
 
   const services = [
-    {
-      title: "Physio and Rehab",
-      description: "Personalized therapy to restore movement faster",
-      href: "/services/physio&rehab",
-      image: IMAGES.serviceDetails.rehabDetail,
-    },
-    {
-      title: "Home Care Physio",
-      description: "Expert physiotherapy delivered at home",
-      href: "/services/home-care-physio",
-      image: IMAGES.serviceDetails.homecare,
-    },
-    {
-      title: "Home Nursing",
-      description: "Professional nursing support for daily recovery",
-      href: "/services/home-nursing",
-      image: IMAGES.serviceDetails.myofascialDetail,
-    },
-    {
-      title: "Care Taker",
-      description: "Compassionate assistance for comfort and safety",
-      href: "/services/care-taker",
-      image: IMAGES.serviceDetails.acupunctureDetail,
-    },
-    {
-      title: "Sports Injury",
-      description: "Targeted rehab to return to play.",
-      href: "/services/sports-injury",
-      image: IMAGES.serviceDetails.sportsInjuryDetail,
-    },
-    {
-      title: "Spine Care",
-      description: "Evidence‑based treatment for lasting back relief",
-      href: "/services/spine-care",
-      image: IMAGES.serviceDetails.spinecareDetail,
-    },
-    // Add more services as needed
-      {
-      title: "Posture Correction",  
+  {
+    title: "Care Taker",
+    description: "Compassionate assistance for comfort and safety",
+    href: "/services/care-taker",
+    image: IMAGES.serviceDetails.acupunctureDetail,
+  },
+  {
+    title: "Diabetes Wound Healing",
+    description: "Specialized care to promote diabetic wound healing",
+    href: "/services/diabetes-wound-healing",
+    image: IMAGES.serviceDetails.diabetesWoundHealingDetail,
+  },
+  {
+    title: "Home Care Physio",
+    description: "Expert physiotherapy delivered at home",
+    href: "/services/home-care-physio",
+    image: IMAGES.serviceDetails.homecare,
+  },
+  {
+    title: "Home Nursing",
+    description: "Professional nursing support for daily recovery",
+    href: "/services/home-nursing",
+    image: IMAGES.serviceDetails.myofascialDetail,
+  },
+  {
+    title: "Physio and Rehab",
+    description: "Personalized therapy to restore movement faster",
+    href: "/services/physio&rehab",
+    image: IMAGES.serviceDetails.rehabDetail,
+  },
+  {
+    title: "Posture Correction",
+    description: "Improve your posture for better health and confidence",
+    href: "/services/posture-correction",
+    image: IMAGES.serviceDetails.postureCorrectionDetail,
+  },
+  {
+    title: "Spine Care",
+    description: "Evidence‑based treatment for lasting back relief",
+    href: "/services/spine-care",
+    image: IMAGES.serviceDetails.spinecareDetail,
+  },
+  {
+    title: "Sports Injury",
+    description: "Targeted rehab to return to play.",
+    href: "/services/sports-injury",
+    image: IMAGES.serviceDetails.sportsInjuryDetail,
+  },
+  {
+    title: "Varicose Vein Treatment",
+    description: "Effective treatment and relief for varicose veins",
+    href: "/services/varicose-vein-treatment",
+    image: IMAGES.serviceDetails.varicoseVeinDetail,
+  }
+]
 
-      description: "Improve your posture for better health and confidence",
-      href: "/services/posture-correction",
-      image: IMAGES.serviceDetails.postureCorrectionDetail,
-    },
-    {   
-      title: "Diabetes Wound Healing",
-      description: "Specialized care to promote diabetic wound healing",
-      href: "/services/diabetes-wound-healing",
-      image: IMAGES.serviceDetails.diabetesWoundHealingDetail,
-    },
-    {
-      title: "Varicose Vein Treatment",
-      description: "Effective treatment and relief for varicose veins",
-      href: "/services/varicose-vein-treatment",    
-      image: IMAGES.serviceDetails.varicoseVeinDetail,
-    }
-  ]
 
   // Auto-scroll functionality for hero
   useEffect(() => {
@@ -879,7 +878,7 @@ export default function HomePage() {
             <div className="relative animate-fadeInLeft">
               <div className="relative">
                 <Image
-                  src={IMAGES.doctor.drSunil || "/placeholder.svg"}
+                  src={IMAGES.doctor.drRamKumar || "/placeholder.svg"}
                   alt="Dr. Ram Kumar - Orthopaedic and Sports Physiotherapy"
                   width={300}
                   height={400}
@@ -949,7 +948,10 @@ export default function HomePage() {
             </div>
             <div>
               <h4 className="font-semibold text-[#2B4470] text-sm">Address</h4>
-              <p className="text-[#348AC7] text-sm">Oceyas Physiotherapy & Rehab clinic, Bangalore</p>
+              <p className="text-[#348AC7] text-sm">NO 13, Senthuragam, Ramamurthy Nagar,</p>
+              <p className="text-[#348AC7] text-sm">Near Sunrise Hospital, Ragavedra Circle,</p>
+              <p className="text-[#348AC7] text-sm">Bangalore - 560016</p>
+              
             </div>
           </div>
           <div className="flex items-center gap-3 hover-lift transition-all duration-300 animate-sway">
@@ -1061,8 +1063,8 @@ export default function HomePage() {
                   <span>+91 8075554529</span>
                 </div>
                 <div className="flex items-center gap-3 hover:translate-x-2 transition-transform duration-300">
-                  <MapPin size={18} className="text-[#348AC7]" />
-                  <span>Oceyas Physiotherapy & Rehab clinic, Bangalore</span>
+                  <MapPin size={30} className="text-[#348AC7]" />
+                  <span>Oceyas Physiotherapy & Rehab clinic, Ramamurthy Nagar,Bangalore.</span>
                 </div>
                 <div className="flex items-center gap-3 hover:translate-x-2 transition-transform duration-300">
                   <Clock size={18} className="text-[#348AC7]" />

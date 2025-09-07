@@ -79,7 +79,8 @@ export default function ContactPage() {
               <p className="text-[#C7DDEB] text-center text-lg">
                 Oceyas Physiotherapy & Rehab clinic
                 <br />
-                Jayanti Nagar Main Rd, Bengaluru
+                Near Sunrise Hospital, Ragavedra Circle,
+Ramamurthy Nagar, Bangalore
               </p>
               <p className="text-[#C7DDEB] text-sm mt-2">Easy parking available</p>
             </div>
@@ -135,9 +136,10 @@ export default function ContactPage() {
             <div className="bg-white p-6 rounded-2xl shadow-lg">
               <h3 className="text-xl font-bold text-[#2B4470] mb-4">Nearby Landmarks</h3>
               <ul className="space-y-2 text-[#348AC7]">
-                <li>• Keerthi Harmony Apartments 13 Road</li>
-                <li>• Jayanti Nagar Main Rd</li>
-                <li>• Next to Sunrise Hospital</li>
+                <li>• NO 13,Senthuragam</li>
+                <li>• Near Sunrise Hospital</li>
+                <li>• Ragavedra circle</li>
+                <li>• Ramamurthy nagar</li>
               </ul>
             </div>
           </div>

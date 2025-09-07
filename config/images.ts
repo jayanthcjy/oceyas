@@ -54,7 +54,7 @@ export const IMAGES = {
 
   // Doctor Section
   doctor: {
-    drSunil: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037425/DrRam_vzq6gm.jpg?height=400&width=300",
+    drRamKumar: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037425/DrRam_vzq6gm.jpg?height=400&width=300",
     genericDoctor: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037425/DrRam_vzq6gm.jpg?height=400&width=500", // New image for service pages
   },
 

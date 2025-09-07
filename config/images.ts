@@ -35,14 +35,30 @@ export const IMAGES = {
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753429598/PreventiveThrapy_tfljfu.png?height=200&width=300",
   },
 
+  // Testimonials
+  testimonials: {
+    testimonial1: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226825/t1_xsgrdt.jpg",
+    testimonial2: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226826/t2_zus1r3.jpg",
+    testimonial3: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226826/t6_eplwml.jpg",
+    testimonial4: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226826/t7_evorp3.jpg",
+    testimonial5: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226826/t5_duvsby.jpg",
+    testimonial6: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226825/t3_dbqeqa.jpg",
+    testimonial7: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226826/t4_zwph2h.jpg",
+    testimonial8: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226823/t8_qf9e6k.jpg",
+    testimonial9: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226824/t9_svcdfl.jpg",
+    testimonial10: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226824/t10_zwnwbt.jpg",
+    testimonial11: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226824/t11_klcxd1.jpg",
+    testimonial12: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226824/t12_in0pfm.jpg",
+    testimonial13: "https://res.cloudinary.com/dcztmndcd/image/upload/v1757226825/t14_ehbiud.jpg",
+  },
+
   // Doctor Section
   doctor: {
     drSunil: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037425/DrRam_vzq6gm.jpg?height=400&width=300",
     genericDoctor: "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037425/DrRam_vzq6gm.jpg?height=400&width=500", // New image for service pages
   },
 
-  // Testimonials
-  testimonials: {},
+  
 
   // Blog Section
   blog: {
@@ -54,10 +70,12 @@ export const IMAGES = {
 
   // Service Detail Pages
   serviceDetails: {
+    homecare:
+      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/home_care_sndqqm.jpg?height=300&width=400",
     spinecareDetail:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753366513/spineCare_yl95p1.png?height=400&width=600",
     postureCorrectionDetail:
-      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/home_care_sndqqm.jpg?height=400&width=600",
+      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757218779/Posture_adu4qr.jpg?height=400&width=600",
     myofascialDetail:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757037426/Home_Nurse_kfxxc8.jpg?height=400&width=600",
     sportsInjuryDetail:
@@ -69,7 +87,16 @@ export const IMAGES = {
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753366505/OnlineSessions_pr1o05.png?height=400&width=600",
     preventiveDetail:
       "https://res.cloudinary.com/dvwzde3vf/image/upload/v1753427388/post_pdb1ju.png?height=400&width=600",
-  },
+  
+    overseasMedicineDetail:
+      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757218716/Overseas_if8s1b.jpg?height=400&width=600",
+    diabetesWoundHealingDetail:
+      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757218715/Dieabetic_xsdpgk.jpg?height=400&width=600",
+    varicoseVeinDetail:
+      "https://res.cloudinary.com/dvwzde3vf/image/upload/v1757218990/Vein_bcnthf.jpg?height=400&width=600",  
+    },
+
+
 
   // Why Us Section
   whyUs: {
@@ -78,6 +105,8 @@ export const IMAGES = {
     treatment: "/placeholder.svg?height=100&width=100",
     monitoring: "/placeholder.svg?height=100&width=100",
   },
+
+
 
   // About Us Page
   about: {
@@ -115,7 +144,7 @@ export const IMAGES = {
 // WhatsApp Configuration
 export const WHATSAPP_CONFIG = {
   number: "918075554529",
-  message: "Hi! I would like to book a physiotherapy session at Oceyas Physio & Rehab.",
+  message: "Hi! I would like to book a physiotherapy session at Oceyas Physiotherapy & Rehab clinic.",
   getWhatsAppUrl: () => `https://wa.me/${WHATSAPP_CONFIG.number}?text=${encodeURIComponent(WHATSAPP_CONFIG.message)}`,
 }
 

@@ -31,7 +31,7 @@ export default function Header() {
           <Link href="/" className="flex items-center">
             <div className="leading-tight text-center md:text-left">
               <h1 className="text-xl md:text-2xl font-bold">Oceyas</h1>
-              <p className="text-xs text-white/80">Physio & Rehab</p>
+              <p className="text-xs text-white/80">Healthe Care</p>
             </div>
           </Link>
 

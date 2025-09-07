@@ -117,7 +117,7 @@ export default function HomeCarePhysioPage() {
             </div>
             <div className="relative animate-fade-in-right opacity-0">
               <Image
-                src={IMAGES.serviceDetails.postureCorrectionDetail || "/placeholder.svg"}
+                src={IMAGES.serviceDetails.homecare || "/placeholder.svg"}
                 alt="Home Care Physiotherapy Services"
                 width={500}
                 height={350}
@@ -296,12 +296,12 @@ export default function HomeCarePhysioPage() {
       {/* Footer */}
       <footer className="bg-[#2B4470] text-white py-8 px-4">
         <div className="max-w-5xl mx-auto text-center animate-fade-in-up opacity-0">
-          <h3 className="text-lg font-bold mb-2">Oceyas Physio & Rehab</h3>
+          <h3 className="text-lg font-bold mb-2">Oceyas Physiotherapy & Rehab clinic</h3>
           <p className="text-[#C7DDEB] text-sm mb-4">
             Professional home care physiotherapy services
           </p>
           <p className="text-[#C7DDEB] text-xs">
-            © Oceyas Physio & Rehab. All rights reserved.
+            © Oceyas Physiotherapy & Rehab clinic. All rights reserved.
           </p>
         </div>
       </footer>

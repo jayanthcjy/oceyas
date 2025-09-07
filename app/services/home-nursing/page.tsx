@@ -297,12 +297,12 @@ export default function HomeNursePage() {
       {/* Footer */}
       <footer className="bg-[#2B4470] text-white py-8 px-4">
         <div className="max-w-5xl mx-auto text-center animate-fade-in-up opacity-0">
-          <h3 className="text-lg font-bold mb-2">Oceyas Physio & Rehab</h3>
+          <h3 className="text-lg font-bold mb-2">Oceyas Physiotherapy & Rehab clinic</h3>
           <p className="text-[#C7DDEB] text-sm mb-4">
             Professional home nursing services with compassionate care
           </p>
           <p className="text-[#C7DDEB] text-xs">
-            © Oceyas Physio & Rehab. All rights reserved.
+            © Oceyas Physiotherapy & Rehab clinic. All rights reserved.
           </p>
         </div>
       </footer>

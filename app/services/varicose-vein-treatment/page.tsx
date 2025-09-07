@@ -4,20 +4,20 @@ import Header from "@/components/Header"
 import { IMAGES, WHATSAPP_CONFIG } from "@/config/images"
 import { 
   MessageCircle, 
-  TrendingUp, 
   Activity, 
-  Target, 
-  Users, 
+  Zap, 
   Shield, 
-  Zap,
+  Users, 
+  Clock, 
+  Heart,
   CheckCircle,
   Star, 
-  Clock 
+  Target 
 } from "lucide-react"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 
-export default function SportsInjuryPage() {
+export default function VaricoseVeinTreatmentPage() {
   const handleWhatsApp = () => {
     window.open(WHATSAPP_CONFIG.getWhatsAppUrl(), "_blank")
   }
@@ -50,44 +50,44 @@ export default function SportsInjuryPage() {
 
   const commonConditions = [
     {
-      title: "Ankle Sprains",
-      description: "Comprehensive treatment for ankle injuries",
-      icon: Target
-    },
-    {
-      title: "Knee Injuries",
-      description: "ACL, MCL, and meniscus injury rehabilitation",
+      title: "Spider Veins",
+      description: "Treatment for small, superficial vein networks",
       icon: Activity
     },
     {
-      title: "Muscle Strains",
-      description: "Hamstring, calf, and quadriceps strain recovery",
-      icon: TrendingUp
+      title: "Varicose Veins",
+      description: "Comprehensive care for enlarged, twisted veins",
+      icon: Heart
     },
     {
-      title: "Shoulder Injuries",
-      description: "Rotator cuff and shoulder impingement treatment",
+      title: "Leg Swelling",
+      description: "Relief from venous-related leg swelling and discomfort",
       icon: Shield
     },
     {
-      title: "Tennis Elbow",
-      description: "Lateral epicondylitis treatment and prevention",
-      icon: Users
+      title: "Circulation Issues",
+      description: "Improving blood flow and venous circulation",
+      icon: Target
     },
     {
-      title: "Running Injuries",
-      description: "IT band syndrome and runner's knee treatment",
-      icon: Zap
+      title: "Chronic Venous Insufficiency",
+      description: "Advanced treatment for chronic vein problems",
+      icon: Clock
+    },
+    {
+      title: "Post-Surgery Care",
+      description: "Rehabilitation after varicose vein procedures",
+      icon: Users
     }
   ]
 
   const treatments = [
-    "Sport-specific injury assessment",
-    "Manual therapy and joint mobilization",
-    "Progressive strengthening exercises",
-    "Return-to-sport conditioning programs",
-    "Injury prevention education",
-    "Performance enhancement strategies"
+    "Comprehensive venous assessment and diagnosis",
+    "Non-invasive compression therapy techniques",
+    "Manual lymphatic drainage therapy",
+    "Exercise therapy for improved circulation",
+    "Patient education on vein health management",
+    "Post-treatment care and maintenance programs"
   ]
 
   return (
@@ -100,11 +100,11 @@ export default function SportsInjuryPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="animate-fade-in-left opacity-0">
               <h1 className="text-3xl md:text-4xl font-bold text-[#2B4470] mb-4 leading-tight">
-                Sports Injury Rehabilitation
+                Varicose Vein Treatment
               </h1>
               <p className="text-lg text-[#348AC7] mb-6 leading-relaxed">
-                Expert treatment for sports injuries with specialized rehabilitation 
-                programs to get athletes back to peak performance safely and effectively.
+                Effective treatment and relief for varicose veins with advanced 
+                physiotherapy techniques and comprehensive vein health management.
               </p>
               <div className="flex justify-center sm:justify-start">
                 <button
@@ -112,14 +112,14 @@ export default function SportsInjuryPage() {
                   className="bg-[#D04A6B] hover:bg-[#348AC7] text-white px-6 py-3 rounded-2xl font-semibold transition-all duration-300 flex items-center gap-2 justify-center hover:scale-105 shadow-lg hover:shadow-xl animate-pulse"
                 >
                   <MessageCircle size={18} />
-                  Book Sports Rehab
+                  Book Consultation
                 </button>
               </div>
             </div>
             <div className="relative animate-fade-in-right opacity-0">
               <Image
-                src={IMAGES.serviceDetails.sportsInjuryDetail || "/placeholder.svg"}
-                alt="Sports Injury Rehabilitation Services"
+                src={IMAGES.serviceDetails.varicoseVeinDetail      || "/placeholder.svg"}
+                alt="Varicose Vein Treatment"
                 width={500}
                 height={350}
                 className="rounded-2xl shadow-xl object-cover w-full hover:scale-105 transition-transform duration-700"
@@ -134,11 +134,11 @@ export default function SportsInjuryPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10 animate-fade-in-up opacity-0">
             <h2 className="text-2xl md:text-3xl font-bold text-[#2B4470] mb-4">
-              Sports Injuries We Treat
+              Vein Conditions We Treat
             </h2>
             <p className="text-[#348AC7] text-base max-w-2xl mx-auto">
-              Specialized treatment for a wide range of sports-related injuries 
-              with evidence-based rehabilitation protocols for optimal recovery.
+              Comprehensive treatment for various venous conditions and related 
+              circulation problems affecting your comfort and mobility.
             </p>
           </div>
 
@@ -185,11 +185,11 @@ export default function SportsInjuryPage() {
         <div className="max-w-5xl mx-auto">
           <div className="animate-fade-in-up opacity-0">
             <h2 className="text-2xl md:text-3xl font-bold text-[#2B4470] mb-4 text-center">
-              Our Sports Rehabilitation Approach
+              Our Treatment Approach
             </h2>
             <p className="text-[#348AC7] text-base mb-8 leading-relaxed text-center max-w-3xl mx-auto">
-              Comprehensive sports injury rehabilitation combining advanced techniques 
-              with sport-specific training to ensure safe return to competition.
+              Evidence-based varicose vein treatment combining conservative management 
+              techniques with advanced physiotherapy for optimal outcomes.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
@@ -229,15 +229,15 @@ export default function SportsInjuryPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in-up opacity-0 mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-[#2B4470] mb-4">
-              Why Choose Our Sports Injury Services?
+              Why Choose Our Varicose Vein Treatment?
             </h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: TrendingUp, title: "Performance Focus", desc: "Get back to peak athletic performance" },
-              { icon: Target, title: "Injury Prevention", desc: "Reduce risk of future sports injuries" },
-              { icon: Clock, title: "Faster Recovery", desc: "Evidence-based protocols for quicker healing" }
+              { icon: Star, title: "Non-Invasive Methods", desc: "Conservative treatment options without surgical intervention" },
+              { icon: Zap, title: "Quick Relief", desc: "Effective symptom management and improved circulation" },
+              { icon: Heart, title: "Holistic Care", desc: "Comprehensive approach to vein health and overall wellness" }
             ].map((benefit, index) => {
               const IconComponent = benefit.icon
               const [ref, isVisible] = useScrollAnimation()
@@ -278,18 +278,18 @@ export default function SportsInjuryPage() {
       <section className="py-12 px-4 bg-[#C7DDEB]">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up opacity-0">
           <h2 className="text-2xl md:text-3xl font-bold text-[#2B4470] mb-4">
-            Ready to Get Back in the Game?
+            Ready to Address Your Varicose Veins?
           </h2>
           <p className="text-[#348AC7] text-base mb-6 max-w-2xl mx-auto">
-            Don't let sports injuries sideline you. Get expert rehabilitation 
-            and return to your sport stronger than ever.
+            Don't let varicose veins limit your activities. Get effective, 
+            non-invasive treatment to improve your circulation and comfort. Schedule your consultation today.
           </p>
           <button
             onClick={handleWhatsApp}
             className="bg-[#D04A6B] hover:bg-[#348AC7] text-white px-8 py-4 rounded-2xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 mx-auto hover:scale-110 animate-bounce"
           >
             <MessageCircle size={24} />
-            Start Sports Rehab
+            Start Treatment
           </button>
         </div>
       </section>
@@ -299,7 +299,7 @@ export default function SportsInjuryPage() {
         <div className="max-w-5xl mx-auto text-center animate-fade-in-up opacity-0">
           <h3 className="text-lg font-bold mb-2">Oceyas Physiotherapy & Rehab clinic</h3>
           <p className="text-[#C7DDEB] text-sm mb-4">
-            Expert sports injury rehabilitation and performance enhancement
+            Expert varicose vein treatment for better circulation and comfort
           </p>
           <p className="text-[#C7DDEB] text-xs">
             © Oceyas Physiotherapy & Rehab clinic. All rights reserved.

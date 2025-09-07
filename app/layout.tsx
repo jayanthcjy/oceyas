@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Oceyas Physio & Rehab - Expert Physiotherapy & Rehabilitation</title>
+        <title>Oceyas Health Care - Expert Physiotherapy & Rehabilitation</title>
         <meta
           name="description"
           content="Professional physiotherapy and rehabilitation services with Dr. Ram Kumar. Specializing in spine care, sports injury, posture correction, and more. 12+ years experience, 5K+ happy customers."

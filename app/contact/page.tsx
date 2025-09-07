@@ -24,7 +24,7 @@ export default function ContactPage() {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-[#2B4470] mb-6">Contact Us</h1>
             <p className="text-xl text-[#348AC7] max-w-3xl mx-auto leading-relaxed">
-              Get in touch with Oceyas Physio & Rehab. We're here to help you start your journey to better health.
+              Get in touch with Oceyas Physiotherapy & Rehab clinic. We're here to help you start your journey to better health.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export default function ContactPage() {
               </div>
               <h3 className="font-semibold text-white mb-2 text-xl">Visit Us</h3>
               <p className="text-[#C7DDEB] text-center text-lg">
-                Oceyas Physio & Rehab
+                Oceyas Physiotherapy & Rehab clinic
                 <br />
                 Jayanti Nagar Main Rd, Bengaluru
               </p>

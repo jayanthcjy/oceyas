@@ -217,7 +217,7 @@ export default function BackPainReliefExercisesPage() {
             <div className="bg-[#DEACF5] p-8 rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-[#28104E] mb-4">Need Professional Guidance?</h3>
               <p className="text-[#6237A0] mb-6">
-                Dr. Sunil at Oceyas Physio & Rehab can provide personalized back pain treatment and guide you through the
+                Dr. Sunil at Oceyas Physiotherapy & Rehab clinic can provide personalized back pain treatment and guide you through the
                 most effective exercises for your specific condition.
               </p>
               <button

@@ -1,11 +1,94 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Phone, MapPin, Clock, MessageCircle, Star, Users, Award, Calendar } from "lucide-react"
+import { Phone, MapPin, Clock, MessageCircle, Star, Users, Award, Calendar, Quote, ChevronRight, ChevronLeft, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Header from "@/components/Header"
+
 import { IMAGES, WHATSAPP_CONFIG, MAPS_CONFIG } from "@/config/images"
+
+const useScrollAnimation = (): [React.RefObject<HTMLDivElement>, boolean] => {
+  const ref = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          if (ref.current) {
+            observer.unobserve(ref.current)
+          }
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [])
+
+  return [ref, isVisible]
+}
+
+const TestimonialGalleryItem = ({ index, onClick }: { index: number; onClick: (index: number) => void }) => {
+  const [ref, isVisible] = useScrollAnimation()
+
+  return (
+    <div
+      ref={ref}
+      className={`flex-shrink-0 w-64 h-64 relative group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-xl ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+      style={{
+        transitionDelay: `${index * 50}ms`,
+      }}
+      onClick={() => onClick(index)}
+    >
+      <div className="w-full h-full bg-[#C7DDEB] rounded-2xl overflow-hidden relative animate-floatGentle">
+        <Image
+          src={(IMAGES.testimonials as any)?.[`testimonial${index + 1}`] || "/placeholder.svg"}
+          alt={`Patient Testimonial ${index + 1}`}
+          width={256}
+          height={256}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+
+
+        
+      </div>
+    </div>
+  )
+}
+
+const FullViewModal = ({ src, onClose }: { src: string; onClose: () => void }) => (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fadeIn">
+    <div className="relative max-w-4xl max-h-[90vh] w-full h-full animate-scaleIn">
+      <Image
+        src={src}
+        alt="Enlarged testimonial"
+        layout="fill"
+        objectFit="contain"
+        className="rounded-lg"
+      />
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 bg-white/20 text-white rounded-full p-2 hover:bg-white/30 transition-all duration-300"
+      >
+        <X size={24} />
+      </button>
+    </div>
+  </div>
+);
+
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -16,6 +99,7 @@ export default function HomePage() {
   const [problemError, setProblemError] = useState("")
   const sliderRef = useRef<HTMLDivElement>(null)
   const testimonialRef = useRef<HTMLDivElement>(null)
+  const [selectedTestimonialIndex, setSelectedTestimonialIndex] = useState<number | null>(null);
 
   const heroSlides = [
     {
@@ -64,7 +148,7 @@ export default function HomePage() {
     },
     {
       name: "Meera Patel",
-      review: "Online sessions were so convenient and effective. Highly recommend Oceyas Physio & Rehab!",
+      review: "Online sessions were so convenient and effective. Highly recommend Oceyas Physiotherapy & Rehab clinic!",
       rating: 5,
       condition: "Online Therapy",
     },
@@ -99,7 +183,7 @@ export default function HomePage() {
       title: "Home Care Physio",
       description: "Expert physiotherapy delivered at home",
       href: "/services/home-care-physio",
-      image: IMAGES.serviceDetails.postureCorrectionDetail,
+      image: IMAGES.serviceDetails.homecare,
     },
     {
       title: "Home Nursing",
@@ -124,6 +208,26 @@ export default function HomePage() {
       description: "Evidence‑based treatment for lasting back relief",
       href: "/services/spine-care",
       image: IMAGES.serviceDetails.spinecareDetail,
+    },
+    // Add more services as needed
+      {
+      title: "Posture Correction",  
+
+      description: "Improve your posture for better health and confidence",
+      href: "/services/posture-correction",
+      image: IMAGES.serviceDetails.postureCorrectionDetail,
+    },
+    {   
+      title: "Diabetes Wound Healing",
+      description: "Specialized care to promote diabetic wound healing",
+      href: "/services/diabetes-wound-healing",
+      image: IMAGES.serviceDetails.diabetesWoundHealingDetail,
+    },
+    {
+      title: "Varicose Vein Treatment",
+      description: "Effective treatment and relief for varicose veins",
+      href: "/services/varicose-vein-treatment",    
+      image: IMAGES.serviceDetails.varicoseVeinDetail,
     }
   ]
 
@@ -509,7 +613,7 @@ export default function HomePage() {
   </div>
 </section>
 
-     {/* Services Section */}
+{/* Services Section */}
 <section className="py-12 px-4 bg-white relative">
   <div className="max-w-6xl mx-auto">
     <div className="text-center mb-8 animate-slideInDown">
@@ -517,6 +621,7 @@ export default function HomePage() {
     </div>
 
     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      {/* Original Services */}
       {services.map((service, index) => (
         <Link key={index} href={service.href}>
           <div className={`relative group h-[200px] md:h-[400px] rounded-xl overflow-hidden hover-lift animate-scaleIn stagger-${index % 3 + 1}`}>
@@ -540,8 +645,127 @@ export default function HomePage() {
         </Link>
       ))}
     </div>
+      
+    {/* Other Services Section */}
+    <div className="mt-16">
+      <div className="text-center mb-8">
+        <h3 className="text-2xl md:text-3xl font-semibold text-[#2B4470] mb-2">Other Services</h3>
+        <p className="text-[#348AC7] text-lg">Additional healthcare and support services</p>
+      </div>
+
+      <div className="flex justify-center">
+        <div className="w-full max-w-md">
+          <Link href="/services/overseas-medicine-admissions">
+            <div className="relative group h-[200px] md:h-[400px] rounded-xl overflow-hidden hover-lift animate-scaleIn">
+              <Image
+                src={IMAGES.serviceDetails.overseasMedicineDetail || "/placeholder.svg"}
+                alt="Overseas Medicine Admissions"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-125"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2B4470]/90 via-[#2B4470]/50 to-transparent transition-all duration-500 group-hover:from-[#348AC7]/90" />
+              <div className="absolute inset-x-0 bottom-0 p-3 md:p-6 text-white transform transition-all duration-500 group-hover:translate-y-[-10px]">
+                <h3 className="text-sm md:text-2xl font-bold mb-1 md:mb-2 group-hover:text-[#C7DDEB] transition-all duration-300">
+                  Overseas Medicine Admissions
+                </h3>
+                <p className="text-xs md:text-sm text-[#C7DDEB] group-hover:text-white transition-all duration-300 line-clamp-2">
+                  Expert guidance for medical studies abroad
+                </p>
+              </div>
+              <div className="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
+            </div>
+          </Link>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+{/* Testimonial Gallery Section */}
+<section className="py-12 px-4 bg-[#C7DDEB] relative overflow-hidden">
+  {/* Background decorative elements */}
+  <div className="absolute top-0 right-1/4 w-20 h-20 bg-white/20 rounded-full animate-floatSlow"></div>
+  <div className="absolute bottom-10 left-1/3 w-12 h-12 bg-[#348AC7]/10 rounded-full animate-sway"></div>
+  
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-8 animate-slideInDown">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#2B4470]">Testimonial Gallery</h2>
+    </div>
+    {/* Header */}
+    <div className="text-center mb-10 animate-fade-in-up">
+      <div className="flex items-center justify-center gap-2 mb-4">
+        <Quote className="text-[#348AC7] animate-pulse" size={24} />
+        <h2 className="text-2xl md:text-3xl font-bold text-[#2B4470]">
+          Patient Testimonials
+        </h2>
+        <Quote className="text-[#348AC7] animate-pulse transform rotate-180" size={24} />
+      </div>
+      <p className="text-[#348AC7] text-base max-w-2xl mx-auto">
+        Real stories from our patients showcasing their recovery journey 
+        and positive experiences with our treatments
+      </p>
+    </div>
+
+    {/* Testimonial Gallery */}
+    <div className="relative">
+      {/* Navigation Buttons */}
+      <button
+        onClick={() => {
+          const container = document.getElementById('testimonial-scroll')
+          if (container) {
+            container.scrollBy({ left: -280, behavior: 'smooth' })
+          }
+        }}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110 text-[#348AC7] hover:bg-[#C7DDEB] cursor-pointer"
+        style={{ transform: 'translateY(-50%) translateX(-50%)' }}
+      >
+        <ChevronLeft size={20} />
+      </button>
+
+      <button
+        onClick={() => {
+          const container = document.getElementById('testimonial-scroll')
+          if (container) {
+            container.scrollBy({ left: 280, behavior: 'smooth' })
+          }
+        }}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110 text-[#348AC7] hover:bg-[#C7DDEB] cursor-pointer"
+        style={{ transform: 'translateY(-50%) translateX(50%)' }}
+      >
+        <ChevronRight size={20} />
+      </button>
+
+      {/* Scrollable Container */}
+      <div
+        id="testimonial-scroll"
+        className="flex gap-4 overflow-x-auto scrollbar-hide py-4 px-8"
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+      >
+        {/* Generate 13 testimonial cards */}
+        {Array.from({ length: 13 }, (_, index) => (
+          <TestimonialGalleryItem key={index} index={index} onClick={setSelectedTestimonialIndex} />
+        ))}
+      </div>
+    </div>
+
+    {/* Bottom CTA */}
+    <div className="text-center mt-8 animate-fade-in-up">
+      <p className="text-[#348AC7] text-sm mb-4">
+        Join hundreds of satisfied patients who have transformed their lives
+      </p>
+      <button
+        onClick={handleWhatsApp}
+        className="bg-[#D04A6B] hover:bg-[#348AC7] text-white px-6 py-3 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl animate-pulse flex items-center gap-2 mx-auto"
+      >
+        <MessageCircle size={18} />
+        Share Your Story
+      </button>
+    </div>
+  </div>
+</section>
+
 
  {/* Testimonials Section - Google Reviews Style */}
 <section className="py-16 px-4 animate-gradient relative overflow-hidden">
@@ -725,7 +949,7 @@ export default function HomePage() {
             </div>
             <div>
               <h4 className="font-semibold text-[#2B4470] text-sm">Address</h4>
-              <p className="text-[#348AC7] text-sm">Oceyas Physio & Rehab, Bangalore</p>
+              <p className="text-[#348AC7] text-sm">Oceyas Physiotherapy & Rehab clinic, Bangalore</p>
             </div>
           </div>
           <div className="flex items-center gap-3 hover-lift transition-all duration-300 animate-sway">
@@ -791,7 +1015,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div className="animate-fadeInLeft">
-              <h3 className="text-2xl font-bold mb-4">Oceyas Physio & Rehab</h3>
+              <h3 className="text-2xl font-bold mb-4">Oceyas Physiotherapy & Rehab clinic</h3>
               <p className="text-[#C7DDEB] mb-4">
                 Your trusted partner in physiotherapy and rehabilitation. Expert care for lasting recovery and optimal
                 health with Dr. Ram Kumar's 12+ years of experience.
@@ -838,7 +1062,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-3 hover:translate-x-2 transition-transform duration-300">
                   <MapPin size={18} className="text-[#348AC7]" />
-                  <span>Oceyas Physio & Rehab, Bangalore</span>
+                  <span>Oceyas Physiotherapy & Rehab clinic, Bangalore</span>
                 </div>
                 <div className="flex items-center gap-3 hover:translate-x-2 transition-transform duration-300">
                   <Clock size={18} className="text-[#348AC7]" />
@@ -849,26 +1073,31 @@ export default function HomePage() {
           </div>
           <div className="border-t border-[#348AC7] pt-8 text-center animate-fadeInUp stagger-4">
             <p className="text-[#C7DDEB]">
-              © Oceyas Physio & Rehab. All rights reserved. | Physiotherapy & Rehabilitation Center
+              © Oceyas Physiotherapy & Rehab clinic. All rights reserved. | Physiotherapy & Rehabilitation Center
             </p>
           </div>
         </div>
       </footer>
 
      {/* Enhanced Sticky WhatsApp Button */}
-<button
-  onClick={handleWhatsApp}
-  className="fixed bottom-6 right-6 z-50 hover:scale-110 transition-all duration-300 rounded-xl overflow-hidden"
->
-  <Image 
-    src="/wa.jpg"
-    alt="Chat on WhatsApp"
-    width={60}
-    height={60}
-    className="drop-shadow-lg hover:drop-shadow-2xl rounded-xl"
-  />
-</button>
-
+      <button
+        onClick={handleWhatsApp}
+        className="fixed bottom-6 right-6 z-50 hover:scale-110 transition-all duration-300 rounded-xl overflow-hidden"
+      >
+        <Image 
+          src="/wa.jpg"
+          alt="Chat on WhatsApp"
+          width={60}
+          height={60}
+          className="drop-shadow-lg hover:drop-shadow-2xl rounded-xl"
+        />
+      </button>
+      {selectedTestimonialIndex !== null && (
+        <FullViewModal
+          src={(IMAGES.testimonials as any)?.[`testimonial${selectedTestimonialIndex + 1}`] || "/placeholder.svg"}
+          onClose={() => setSelectedTestimonialIndex(null)}
+        />
+      )}
     </div>
   )
 }
